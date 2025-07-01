@@ -18,7 +18,7 @@ Understanding how layout impacts UI
 Small intro to media queries
 
 🌐 Live Website:
-👉 Click to view the site[(https://legendarysumit.github.io/delivery-kart-site/)]
+👉 Click to view the site :- https://legendarysumit.github.io/delivery-kart-site/
 
 🛠 Built With:
 HTML5
