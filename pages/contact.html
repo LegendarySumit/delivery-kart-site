@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact Us — Delivery Kart</title>
+    <meta name="description"
+        content="Contact Delivery Kart — India’s trusted delivery service partner. Get in touch for support, partnerships, and inquiries." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-container">
+            <div class="left-side">
+                <img src="../assets/images/images.webp" width="50" height="50" alt="Delivery Kart logo" class="image-container" />
+                <div class="title-group">
+                    <h1 class="site-title">Delivery Kart</h1>
+                    <p class="caption">Delivering packages faster than ever</p>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input class="search-input" type="search" placeholder="Search services, cities, help..."
+                    aria-label="Search" />
+                <button class="search-button" aria-label="Search"><i class="fa fa-search"
+                        aria-hidden="true"></i></button>
+            </div>
+
+            <div class="right-side">
+                <nav class="right-nav" aria-label="User actions">
+                    <ul class="right-links">
+                        <li><a href="#" onclick="openLogin()">Login</a></li>
+<li><a href="#" onclick="openSignup()">Sign Up</a></li>
+<li><a href="#" onclick="openContact()">Contact Us</a></li>
+<li><a href="#" onclick="openTelephone()">Telephone</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+            <li><a href="../index.html">Home <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+            <li><a href="about.html">About Us <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+            <li><a href="contact.html" class="active">Contact Us <i class="fa-solid fa-chevron-down small-icon"></i></a>
+            </li>
+            <li><a href="services.html">Services <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+            <li><a href="supnhelp.html">Support & Help <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+            <li><a href="businesspart.html">Business Partners <i class="fa-solid fa-chevron-down small-icon"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- ===== CONTACT HERO ===== -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>We’re Here to Help</h1>
+            <p>
+                Whether you’re tracking an order, exploring business solutions, or need technical assistance — our team
+                is available 24/7.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT GRID SECTION ===== -->
+    <main class="contact-main">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Choose the right channel to reach us directly:</p>
+
+            <div class="contact-item">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                    <h4>Customer Support</h4>
+                    <p>Available 24/7 for delivery and tracking inquiries.</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fa-solid fa-building"></i>
+                <div>
+                    <h4>Corporate Office</h4>
+                    <p>#102, Alpha Tower, Bengaluru, India</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fa-solid fa-rocket"></i>
+                <div>
+                    <h4>Business Partnerships</h4>
+                    <p>Partner with us for API integrations & logistics scaling.</p>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <p><strong>Email:</strong> support@deliverykart.in</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Working Hours:</strong> 24/7 — All Days</p>
+            </div>
+        </div>
+
+        <!-- FORM SECTION -->
+        <div class="contact-form-container">
+            <h2>Send Us a Message</h2>
+            <form id="contact-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Full Name" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+                <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- ===== TRUST SECTION ===== -->
+    <section class="trust-section">
+        <h2>Why Businesses Trust Delivery Kart</h2>
+        <p>
+            Over 800+ business partners rely on Delivery Kart for efficient and transparent logistics.
+            We bring reliability, API flexibility, and real-time shipment visibility to every shipment.
+        </p>
+
+        <div class="trust-grid">
+            <div class="trust-card">
+                <i class="fa-solid fa-clock"></i>
+                <h4>24x7 Availability</h4>
+                <p>Round-the-clock customer service & live chat support.</p>
+            </div>
+            <div class="trust-card">
+                <i class="fa-solid fa-shield"></i>
+                <h4>Secure Deliveries</h4>
+                <p>All parcels handled under strict safety protocols.</p>
+            </div>
+            <div class="trust-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>Pan-India Coverage</h4>
+                <p>We deliver across 500+ cities with regional hubs.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Delivery Kart</h3>
+                <p>"Delivering trust, speed & smiles across India."</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Available Cities</h4>
+                <ul>
+                    <li>Delhi</li>
+                    <li>Mumbai</li>
+                    <li>Hyderabad</li>
+                    <li>Bangalore</li>
+                    <li>Chennai</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+                    <a href="https://twitter.com" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+                    <a href="https://instagram.com" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+                    <a href="https://linkedin.com" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" /></a>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
+            <p>&copy; 2025 <strong>Delivery Kart™</strong>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Global site script -->
+    <script src="../js/script.js"></script>
+    
+    <!-- Modals will load here -->
+    <div id="auth-container"></div>
+    
+    <!-- Load modals + then load auth.js after they exist -->
+    <script>
+      fetch("auth-modals.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("auth-container").innerHTML = html;
+    
+          const s = document.createElement("script");
+          s.src = "../js/auth.js";
+          document.body.appendChild(s);
+        });
+    </script>
+
+</body>
+
+</html>

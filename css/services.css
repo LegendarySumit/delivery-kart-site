@@ -1,0 +1,243 @@
+
+/* ==========================================================
+   Delivery Kart — Services Page Styling (Polished Final)
+========================================================== */
+
+/* ===== HERO SECTION ===== */
+.services-hero {
+  background: linear-gradient(90deg, #f5f2ff, #ebe4ff);
+  text-align: center;
+  padding: 6rem 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.services-hero-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.services-hero h1 {
+  font-size: 2.6rem;
+  color: #432c85;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.services-hero p {
+  color: #3a2d60;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* ===== SERVICES GRID ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.2rem;
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.2rem 1.6rem;
+  box-shadow: 0 6px 18px rgba(67, 44, 133, 0.08);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(90, 53, 255, 0.15);
+}
+
+.service-card i {
+  font-size: 2.2rem;
+  color: #5a35ff;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  color: #432c85;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.service-card p {
+  color: #3a2d60;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== PRICING SECTION ===== */
+.pricing-section {
+  text-align: center;
+  background: #f8f5ff;
+  padding: 5rem 2rem;
+}
+
+.pricing-section h2 {
+  color: #432c85;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pricing-section p {
+  color: #3a2d60;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.pricing-card {
+  background: #fff;
+  padding: 2.5rem 2rem 0.3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(67, 44, 133, 0.08);
+  width: 280px;
+  transition: 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(90, 53, 255, 0.15);
+}
+
+.pricing-card h3 {
+  color: #432c85;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card .price {
+  color: #5a35ff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.pricing-card p {
+  color: #3a2d60;
+  font-size: 0.95rem;
+}
+
+/* ===== CTA SECTION ===== */
+.services-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #f3efff, #ebe3ff);
+  padding: 5rem 2rem;
+  border-radius: 18px;
+  margin: 5rem auto;
+  max-width: 950px;
+  box-shadow: 0 10px 25px rgba(90, 53, 255, 0.15);
+}
+
+.services-cta h2 {
+  color: #432c85;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.services-cta p {
+  color: #3a2d60;
+  margin-bottom: 1.8rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #9d8eff, #a978ff);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(75, 0, 130, 0.25);
+}
+
+/* ===== ANIMATIONS (optional but sleek) ===== */
+.service-card,
+.pricing-card,
+.services-cta {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.service-card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.service-card:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 90%;
+  }
+
+  .services-hero h1 {
+    font-size: 2rem;
+  }
+
+  .services-hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

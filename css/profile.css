@@ -1,0 +1,243 @@
+:root {
+  --purple1: #9d8eff;
+  --purple2: #a978ff;
+  --purple-strong: #5a35ff;
+  --text-dark: #2b2170;
+  --muted: #6a4cff;
+  --card: #ffffff;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(157, 142, 255, 0.15);
+}
+
+/* PAGE BG */
+.profile-page {
+  background: linear-gradient(180deg, #f7f5ff, #ece8ff);
+  padding: 30px 0 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* === GRID: 3 COLUMNS, EQUAL HEIGHT === */
+.profile-grid {
+  max-width: 1250px;
+  margin: 18px auto;
+  display: grid;
+  grid-template-columns: 310px 1fr 380px;
+  gap: 24px;
+  align-items: stretch;
+  /* make equal height */
+}
+
+/* === SIDEBAR === */
+.profile-sidebar {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Avatar */
+.avatar-wrapper {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.avatar-circle {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple1), var(--purple2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  margin: 12px auto 16px auto;
+  box-shadow: 0 10px 20px rgba(157, 142, 255, 0.22);
+}
+
+.avatar-wrapper h2 {
+  color: var(--text-dark);
+  margin: 8px 0 4px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Sidebar buttons - reduced extra gap between avatar and buttons */
+.side-actions {
+  margin-top: auto;
+  /* anchor to bottom so heights align consistently */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Purple DK button */
+.btn-purple {
+  background: linear-gradient(135deg, var(--purple1), var(--purple2));
+  padding: 11px 14px;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  display: block;
+  font-size: 15px;
+}
+
+.btn-purple:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(157, 142, 255, 0.22);
+}
+
+/* === MIDDLE & RIGHT CARDS === */
+.profile-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* card titles */
+.profile-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* informative note above textarea */
+.address-note {
+  margin: 6px 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* input rows */
+.form-row {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--purple-strong);
+}
+
+/* controls */
+input,
+textarea {
+  padding: 10px 12px;
+  border: 2px solid #e8deff;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-dark);
+  background: #fff;
+}
+
+/* readonly styling */
+input[readonly] {
+  background: #f6f4ff;
+  color: var(--purple-strong);
+}
+
+/* smaller buttons consistently sized */
+.small-btn {
+  padding: 9px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* outline variant behaviour */
+/* keep purple on hover — no temporary white flash */
+.outline {
+  background: transparent !important;
+  border: 2px solid var(--purple1);
+  color: var(--purple1);
+}
+
+.outline:hover {
+  background: linear-gradient(135deg, var(--purple1), var(--purple2));
+  transform: translateY(-2px);
+}
+
+/* action row align to right and slight spacing */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Address textarea: make it taller but keep card balanced */
+.address-card textarea {
+  min-height: 140px;
+  /* adjusted height to remove empty white area */
+  resize: vertical;
+  margin-bottom: 12px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Reduce extra vertical padding on address card so button sits closer */
+.address-card {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* Save btn in address card fits width with balanced padding */
+.save-btn {
+  padding: 10px 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Ensure equal vertical alignment:
+   make sidebar & cards expand equally by using min-height that matches content.
+   Since grid align-items:stretch, the cards will stretch; using margin-top:auto on side-actions
+   anchors the sidebar buttons to the bottom so the vertical spacing matches the other two cards. */
+
+/* Responsive adjustments */
+@media (max-width: 1050px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    padding: 0 18px;
+  }
+
+  .avatar-circle {
+    margin-top: 8px;
+  }
+
+  .side-actions {
+    margin-top: 16px;
+  }
+
+  .address-card textarea {
+    min-height: 140px;
+  }
+}
+
+/* small accessibility niceties */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid rgba(90, 53, 255, 0.10);
+  outline-offset: 2px;
+}
