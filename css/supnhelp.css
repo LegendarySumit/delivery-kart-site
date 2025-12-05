@@ -1,0 +1,285 @@
+
+/* =============================================
+   Delivery Kart — Support & Help Page Styling
+============================================= */
+
+/* ===== HERO ===== */
+.support-hero {
+  background: linear-gradient(90deg, #f6f3ff, #ece4ff);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.support-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.support-hero h1 {
+  color: #432c85;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.support-hero p {
+  color: #3a2d60;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #9d8eff, #a978ff);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(75, 0, 130, 0.2);
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 2px solid #a978ff;
+  color: #432c85;
+}
+
+.btn-secondary:hover {
+  background: #f6f2ff;
+}
+
+/* ===== HELP CATEGORIES ===== */
+.help-categories {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f8f6ff;
+}
+
+.help-categories h2 {
+  color: #432c85;
+  margin-bottom: 2rem;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.help-card {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(67, 44, 133, 0.08);
+  transition: 0.3s;
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+}
+
+.help-card i {
+  color: #5a35ff;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.help-card h3 {
+  color: #432c85;
+  margin-bottom: 0.6rem;
+}
+
+.help-card p {
+  color: #3a2d60;
+  font-size: 0.95rem;
+}
+/* ===== FAQ SECTION (Delivery Kart Polished) ===== */
+.faq-section {
+  max-width: 900px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.faq-section h2 {
+  color: #432c85;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+/* each FAQ box */
+.faq-list details {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e3dcff;
+  box-shadow: 0 4px 12px rgba(67, 44, 133, 0.08);
+  margin-bottom: 1.2rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-list details[open] {
+  background: #f9f7ff;
+  border-left: 4px solid #9d8eff;
+  box-shadow: 0 6px 18px rgba(90, 53, 255, 0.12);
+}
+
+/* clickable summary header */
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #432c85;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  list-style: none;
+  user-select: none;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+/* group icon and text on the left */
+.faq-list summary .faq-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+/* icon styling */
+.faq-list summary i {
+  color: #5a35ff;
+  font-size: 1.25rem;
+  margin-right: 0.8rem;
+}
+
+/* question text */
+.faq-list summary span {
+  flex-grow: 1;
+}
+
+/* plus / cross toggle on right */
+.faq-list summary::after {
+  content: "+";
+  font-size: 1.6rem;
+  color: #5a35ff;
+  font-weight: 600;
+  margin-left: auto;
+  transition: transform 0.55s cubic-bezier(0.25, 0.1, 0.25, 1),
+              color 0.55s ease;
+}
+
+.faq-list details[open] summary::after {
+  content: "×";
+  transform: rotate(180deg);
+  color: #a978ff;
+}
+
+/* hover effect */
+.faq-list summary:hover {
+  background: #f3efff;
+}
+
+/* answer area */
+.faq-list p {
+  padding: 1rem 1.5rem;
+  background: #fff;
+  color: #3a2d60;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 1px solid #e6deff;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.faq-list details[open] p {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* hide default marker */
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+/* open highlight */
+.faq-list details[open] summary {
+  background: #f4f0ff;
+  border-bottom: 1px solid #e6deff;
+}
+
+/* responsive adjustments */
+@media (max-width: 600px) {
+  .faq-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .faq-list summary {
+    padding: 1rem;
+  }
+
+  .faq-list summary i {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ===== CTA ===== */
+.support-cta {
+  background: linear-gradient(90deg, #f3efff, #ebe3ff);
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 14px;
+  margin: 5rem auto;
+  max-width: 900px;
+  box-shadow: 0 6px 18px rgba(90, 53, 255, 0.12);
+}
+
+.support-cta h2 {
+  color: #432c85;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.support-cta p {
+  color: #3a2d60;
+  margin-bottom: 1.5rem;
+}
+
+.support-cta .btn-primary {
+  padding: 13px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .faq-list details {
+    padding: 1rem;
+  }
+}

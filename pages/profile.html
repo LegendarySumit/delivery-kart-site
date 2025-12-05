@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile — Delivery Kart</title>
+
+  <!-- main site CSS (keeps global styles / palette) -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- profile-specific CSS -->
+  <link rel="stylesheet" href="../css/profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Header (keeps structure so global script can update header) -->
+  <header>
+    <div class="header-container">
+      <div class="left-side">
+        <img src="../assets/images/images.webp" width="50" height="50" alt="DK logo" class="image-container" />
+        <div class="title-group">
+          <h1 class="site-title">Delivery Kart</h1>
+          <p class="caption">Delivering packages faster than ever!</p>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search for services, locations, help..." class="search-input" />
+        <button class="search-button"><i class="fa fa-search"></i></button>
+      </div>
+
+      <div class="right-side">
+        <nav class="right-nav">
+          <ul class="right-links">
+            <li><a href="#" id="login-btn">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Telephone</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="../index.html">Home <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="about.html">About Us <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="contact.html">Contact Us <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="services.html">Services <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="supnhelp.html">Support & Help <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="businesspart.html">Business Partners <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+    </ul>
+  </nav>
+
+  <main class="profile-page">
+
+    <div class="profile-grid">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="profile-sidebar">
+        <div class="avatar-wrapper">
+          <div class="avatar-circle"><i class="fa-solid fa-user"></i></div>
+          <h2 id="aside-name">User</h2>
+          <p id="aside-email" class="muted">email@example.com</p>
+        </div>
+
+        <div class="side-actions">
+          <a id="aside-continue" class="btn-purple" href="../index.html">Continue</a>
+          <button id="aside-logout" class="btn-purple" type="button">Logout</button>
+        </div>
+      </aside>
+
+      <!-- MIDDLE CARD (PERSONAL INFO) -->
+      <section class="profile-card info-card">
+
+        <h3>Personal Information</h3>
+
+        <div class="form-row">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email (Read Only)</label>
+          <input id="email" type="email" readonly>
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" placeholder="Enter phone number">
+        </div>
+
+        <div class="actions">
+          <button id="save-profile" class="btn-purple small-btn">Save Profile</button>
+          <button id="edit-address-btn" class="btn-purple small-btn outline" type="button">Edit Addresses</button>
+        </div>
+
+      </section>
+
+      <!-- RIGHT CARD (SAVED ADDRESS) -->
+      <section class="profile-card address-card">
+
+        <h3>Saved Address</h3>
+
+        <!-- descriptive context (Option B) -->
+        <p class="muted address-note">
+          Your default address will be used during deliveries and quick checkout. Keep it updated for faster orders.
+        </p>
+
+        <textarea id="address" placeholder="Add a default shipping address"></textarea>
+
+        <button id="save-address" class="btn-purple small-btn save-btn">Save Address</button>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER (keeps site footer) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Delivery Kart</h3>
+        <p>"Delivering trust, speed & smiles across India."</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Available Cities</h4>
+        <ul>
+          <li>Delhi</li>
+          <li>Mumbai</li>
+          <li>Hyderabad</li>
+          <li>Bangalore</li>
+          <li>Chennai</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-icons"><a href="https://facebook.com" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a><a
+            href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+              alt="Twitter" /></a><a href="https://instagram.com" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a><a
+            href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+              alt="LinkedIn" /></a></div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p>&copy; 2025 <strong>Delivery Kart™</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- profile-specific JS -->
+  <script src="../js/profile.js"></script>
+  <!-- global site script (keeps your header behavior) -->
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

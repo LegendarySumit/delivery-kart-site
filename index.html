@@ -2,237 +2,398 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Delivery Kart is the most secure delivery service agency in India that delivers your favourite products at your doorsteps">
-    <meta name="keywords" content="Delivery, Agency, Service, Fast Delivery">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" as="image" href="dk dv ig.webp" type="webp" />
-    <title>Delivery Kart : India's Fastest Delivery Service</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Delivery Kart is the most secure delivery service agency in India that delivers your favourite products at your doorsteps" />
+  <meta name="keywords" content="Delivery, Agency, Service, Fast Delivery" />
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="image" href="assets/images/dk dv ig.webp" type="webp" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <title>Delivery Kart : India's Fastest Delivery Service</title>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <!-- LEFT SECTION -->
-            <div class="left-side">
-                <img src="images.webp" width="100" height="100" alt="DK logo" class="image-container">
-                <div class="title-group">
-                    <h1 class="site-title">Delivery Kart</h1>
-                    <p class="caption">Delivering packages faster than ever!</p>
-                </div>
-            </div>
-
-            <!-- RIGHT SECTION -->
-            <div class="right-side">
-                <p class="telephone">📞 +91 96683 93503</p>
-                <p class="email">📧 prustysumit78@gmail.com</p>
-            </div>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-container">
+      <!-- LEFT SECTION -->
+      <div class="left-side">
+        <img src="assets/images/images.webp" width="50" height="50" alt="DK logo" class="image-container" />
+        <div class="title-group">
+          <h1 class="site-title">Delivery Kart</h1>
+          <p class="caption">Delivering packages faster than ever!</p>
         </div>
-    </header>
+      </div>
 
+      <!-- MIDDLE SECTION -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search for services, locations, help..." class="search-input" />
+        <button class="search-button"><i class="fa fa-search"></i></button>
+      </div>
 
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+      <!-- RIGHT SECTION -->
+      <div class="right-side">
+        <nav class="right-nav">
+          <ul class="right-links">
+            <li><a href="#" id="login-btn">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
             <li><a href="#">Contact Us</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Support & Help</a></li>
-            <li><a href="#">Business Partners</a></li>
-        </ul>
-    </nav>
+            <li><a href="#">Telephone</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-    <div class="hero-image">
-        <img src="dk dv ig.webp" alt="Full-width delivery illustration">
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="pages/about.html">About Us <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="pages/contact.html">Contact Us <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="pages/services.html">Services <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="pages/supnhelp.html">Support & Help <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+      <li><a href="pages/businesspart.html">Business Partners <i class="fa-solid fa-chevron-down small-icon"></i></a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <div class="hero-container">
+    <img class="hero-img" src="assets/images/hero-img.png" alt="Full-width delivery illustration" />
+
+    <div class="hero-overlay">
+      <h1 class="hero-title">Delivering Smiles, One Package at a Time!</h1>
+      <p class="hero-subtitle">Fast, Reliable, and Affordable Delivery Services Across India</p>
+
+      <div class="hero-stats">
+        <ul>
+          <li><strong>Instant delivery integration</strong> for local and regional logistics.</li>
+          <li><strong>Low-commission logistics</strong> designed to cut delivery costs.</li>
+          <li><strong>Seamless API integration</strong> offering live tracking, order management, and instant
+            onboarding.</li>
+          <li><strong>Scalable global network</strong> connecting local delivery agents to international e-commerce
+            ecosystems.</li>
+        </ul>
+      </div>
+
+      <div class="explore-btn">
+        <a href="pages/services.html" class="btn">Explore Services</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== HERO WRAPPER ===== -->
+  <section class="hero-wrapper">
+    <div class="hero-statistics">
+      <div class="stat">
+        <h3>5M+</h3>
+        <p>Orders Delivered</p>
+      </div>
+      <div class="stat">
+        <h3>1M+</h3>
+        <p>Happy Customers</p>
+      </div>
+      <div class="stat">
+        <h3>500+</h3>
+        <p>Cities Covered</p>
+      </div>
+      <div class="stat">
+        <h3>800+</h3>
+        <p>Partner Businesses</p>
+      </div>
     </div>
 
-    <section class="hero-wrapper">
-        <div class="side-benefit left-benefit">
-            <p><strong>5M+</strong><br>Orders Delivered</p>
-        </div>
+    <div class="hero-content">
+      <!-- Left section: tracking form -->
+      <div class="left-sec">
+        <h2>Fast & Reliable Delivery Across India</h2>
+        <p>Track your order instantly</p>
 
-        <section class="hero">
-            <h2>Fast & Reliable Delivery Across India</h2>
-            <p>Track your package instantly</p>
-            <form class="tracking-form" action="#" method="get">
-                <input type="text" placeholder="Enter your tracking number" required>
-                <button type="submit">Track</button>
-            </form>
-        </section>
+        <form class="tracking-form" action="#" method="get">
+          <input type="text" placeholder="Enter your tracking number" required />
+          <button type="submit">Track</button>
+        </form>
+      </div>
 
-        <div class="side-benefit right-benefit">
-            <p><strong>1M+</strong><br>Happy Customers</p>
+      <!-- Right section: image -->
+      <div class="right-sec">
+        <div class="hero-img-new">
+          <img src="assets/images/dk dv ig.webp" alt="Delivery Illustration" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    <div class="faq-item">
+      <input type="checkbox" id="faq1" />
+      <label for="faq1" class="faq-question">
+        <h3>How can I track my delivery?</h3>
+        <i class="fa-solid fa-plus faq-icon"></i>
+      </label>
+      <div class="faq-answer">
+        <p>
+          Tracking your order is simple. Every shipment comes with a <strong>unique tracking ID</strong> generated at
+          checkout. Enter it in our <strong>real-time tracking form</strong> above to see where your package is — from
+          hub to doorstep.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq2" />
+      <label for="faq2" class="faq-question">
+        <h3>What are your delivery charges?</h3>
+        <i class="fa-solid fa-plus faq-icon"></i>
+      </label>
+      <div class="faq-answer">
+        <p>
+          We believe in <strong>transparent logistics</strong>. For customers, <strong>delivery is 100% free</strong>.
+          For business partners, pricing is flexible and designed to <strong>minimize operational costs</strong>.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq3" />
+      <label for="faq3" class="faq-question">
+        <h3>How long does delivery take?</h3>
+        <i class="fa-solid fa-plus faq-icon"></i>
+      </label>
+      <div class="faq-answer">
+        <p>
+          Most metro cities now enjoy <strong>1-hour delivery</strong> through our optimized routing system. For
+          regional deliveries, average time is <strong>24–48 hours</strong> depending on distance and traffic.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <input type="checkbox" id="faq4" />
+      <label for="faq4" class="faq-question">
+        <h3>How do I contact customer support?</h3>
+        <i class="fa-solid fa-plus faq-icon"></i>
+      </label>
+      <div class="faq-answer">
+        <p>
+          Our support team is available <strong>24/7</strong>. You can connect instantly through <strong>WhatsApp
+            Chat</strong>, or raise a request via the <strong>Support Portal</strong> in the footer.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO SECTIONS ===== -->
+  <main class="info-sections">
+    <section class="info-showcase">
+      <div class="info-container">
+        <h2>What's New at Delivery Kart?</h2>
+        <p>
+          Delivery Kart is redefining logistics across India. We now offer <strong>1-hour AI-powered deliveries</strong>
+          in select metro cities.
+        </p>
+
+        <h3>How We're Different</h3>
+        <p>
+          Unlike traditional courier platforms, we provide <strong>zero-cost delivery</strong> for customers and
+          <strong>real-time support</strong> for businesses.
+        </p>
+
+        <div class="cta-line">
+          <a href="pages/about.html" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
     </section>
 
-    <main class="info-grid">
-        <section class="info-block">
-            <h2>🌟 What's New?</h2>
-            <p>
-                We now offer <strong>1-hour delivery</strong> in select metro cities with our new AI-powered route
-                optimization system.
-                This innovation helps reduce delivery delays, improves delivery accuracy, and ensures that even your
-                smallest orders reach
-                you with lightning speed. Stay ahead with our upgraded delivery engine built for the fast-paced
-                lifestyle of modern India.
-            </p>
-        </section>
+    <section class="info-features">
+      <h2>Our Key Strengths</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>🏆 1 Million + Deliveries</h3>
+          <p>Completed with 98.9% satisfaction across India.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📦 500 + Cities</h3>
+          <p>Pan-India operations with local and regional network coverage.</p>
+        </div>
+        <div class="feature-card">
+          <h3>💬 Real-Time Support</h3>
+          <p>Dedicated 24 / 7 chat & WhatsApp channels for instant help.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🌍 Global Expansion Support</h3>
+          <p>From hyperlocal deliveries to international shipments, we scale with your business.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔗 Seamless API Integration</h3>
+          <p>Connect effortlessly to your e-commerce stack using our developer-friendly APIs.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📊 Smart Analytics Dashboard</h3>
+          <p>Gain insights into delivery performance and customer satisfaction.</p>
+        </div>
+      </div>
+    </section>
 
-        <section class="info-block">
-            <h2>🚀 How We're Different</h2>
-            <p>
-                Unlike other courier services, Delivery Kart is centered around <strong>zero delivery
-                    charges</strong> for end customers.
-                With real-time support via WhatsApp and no hidden fees, we make logistics easier and more
-                transparent than ever.
-                Our core focus is not just speed but also the trust and satisfaction of our users.
-            </p>
-        </section>
+    <section class="info-reviews">
+      <h2>What Our Customers Say</h2>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-top"><i class="fa-solid fa-user-tie"></i>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star-half-stroke"></i></div>
+          </div>
+          <p>“Delivery Kart made my business deliveries effortless — 1-hour turnaround!”</p>
+          <h4>— Rajesh K.</h4>
+        </div>
+        <div class="review-card">
+          <div class="review-top"><i class="fa-solid fa-user"></i>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+          </div>
+          <p>“Seamless tracking and zero hidden fees — an absolute game-changer.”</p>
+          <h4>— Priya S.</h4>
+        </div>
+        <div class="review-card">
+          <div class="review-top"><i class="fa-solid fa-user-nurse"></i>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i
+                class="fa-regular fa-star"></i></div>
+          </div>
+          <p>“Our store reached thousands of customers faster than ever!”</p>
+          <h4>— Sneha M.</h4>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        <section class="info-block">
-            <h2>🏆 Recent Achievements</h2>
-            <p>
-                In just 6 months, we have completed <strong>1 million+ deliveries</strong> with <strong>98.9%
-                    customer satisfaction</strong>.
-                These numbers are a testament to our operational excellence, efficient logistics network, and the
-                tireless work of our delivery
-                partners and technology teams committed to redefining parcel services in India.
-            </p>
-        </section>
+  <!-- ===== LOGIN MODAL ===== -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Welcome Back!</h2>
+      <p>Log in to continue to Delivery Kart</p>
+      <form id="login-form">
+        <input type="email" placeholder="Email Address" required>
+        <div class="password-field">
+          <input type="password" id="password" placeholder="Password" required>
+          <i class="fa-solid fa-eye" id="togglePassword"></i>
+        </div>
+        <button type="submit" class="login-btn" id="real-login-btn">Login</button>
 
-        <section class="info-block">
-            <h2>🔧 How We Simplify Your Life</h2>
-            <p>
-                With a single mobile and desktop dashboard, users can easily track, manage, return, and resolve
-                delivery-related issues in one place.
-                Our goal is to make your experience seamless — no more calling helplines or filling long forms. We
-                put the power in your hands.
-            </p>
-        </section>
-
-        <section class="info-block">
-            <h2>📌 Regulatory & Help Links</h2>
-            <ul class="link-list">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Refund Policy</a></li>
-                <li><a href="#">Support Portal</a></li>
-            </ul>
-        </section>
-
-        <section class="info-block">
-            <h2>🌐 Our Service Ecosystem</h2>
-            <p>
-                We proudly support <strong>800+ sellers</strong>, <strong>2500+ delivery agents</strong>, and
-                operate in <strong>500+ cities</strong> across India.
-                From hyperlocal grocery stores to pan-India e-commerce brands, we’ve created a delivery
-                ecosystem that brings sellers and buyers
-                closer like never before.
-            </p>
-        </section>
-
-        <section class="info-block">
-            <h2>💡 Why Choose Delivery Kart?</h2>
-            <p>
-                Delivery Kart brings together reliability, affordability, and lightning-fast service. We are
-                built to cater to all corners of
-                India, even in hard-to-reach areas. Our promise is simple: <strong>No delays, no hidden costs,
-                    just happy customers.</strong>
-            </p>
-        </section>
-
-        <section class="info-block">
-            <h2>🔑 Our Key Features</h2>
-            <ul class="feature-list">
-                <li>24/7 Customer Support for prompt help anytime.</li>
-                <li>Real-time tracking with live map view.</li>
-                <li>Secure, tamper-proof packaging.</li>
-                <li>Delivery to over 500 cities across India.</li>
-                <li>Affordable pricing for businesses and individuals.</li>
-            </ul>
-        </section>
-
-        <section class="info-block">
-            <h2>🗣️ What Our Customers Say</h2>
-            <blockquote>“Delivery Kart is the best! My package was delivered in just 2 hours! Super impressed
-                with the speed and support.” — Priya S.</blockquote>
-            <blockquote>“I’ve used many services, but nothing beats Delivery Kart’s real-time tracking and
-                zero-cost delivery!” — Rajesh K.</blockquote>
-        </section>
-
-        <section class="info-block">
-            <h2>🔔 More Highlights</h2>
-            <p>
-                We're constantly innovating to deliver faster, cheaper, and smarter. Delivery Kart is now live
-                in 500+ cities and expanding daily with smart AI allocation.
-            </p>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <!-- Column 1: Brand Quote -->
-            <div class="footer-col">
-                <h3>Delivery Kart</h3>
-                <p>"Delivering trust, speed & smiles across India."</p>
-            </div>
-
-            <!-- Column 2: Quick Links -->
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Cities -->
-            <div class="footer-col">
-                <h4>Available Cities</h4>
-                <ul>
-                    <li>Delhi</li>
-                    <li>Mumbai</li>
-                    <li>Hyderabad</li>
-                    <li>Bangalore</li>
-                    <li>Chennai</li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Social Icons -->
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
-                    </a>
-                    <a href="https://twitter.com" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
-                    </a>
-                    <a href="https://instagram.com" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
-                    </a>
-                    <a href="https://linkedin.com" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
-                    </a>
-                </div>
-            </div>
+        <div id="login-role-options" class="hidden">
+          <button type="button" id="login-user" class="role-btn">Continue as User</button>
+          <button type="button" id="login-brand" class="role-btn">Continue as Brand Partner</button>
         </div>
 
-        <hr class="footer-divider" />
+      </form>
+    </div>
+  </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 <strong>Delivery Kart™</strong>. All rights reserved.</p>
+
+  <!-- ===== SIGNUP MODAL ===== -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Create Your Account</h2>
+      <p>Join Delivery Kart and start shipping smarter!</p>
+      <form id="signup-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <div class="password-field">
+          <input type="password" id="signup-password" placeholder="Create Password" required>
+          <i class="fa-solid fa-eye" id="toggleSignupPassword"></i>
         </div>
-    </footer>
+        <button type="submit" class="login-btn" id="real-signup-btn">Sign Up</button>
+
+        <div id="signup-role-options" class="hidden">
+          <button type="button" id="signup-user" class="role-btn">Continue as User</button>
+          <button type="button" id="signup-brand" class="role-btn">Continue as Brand Partner</button>
+        </div>
+
+    </div>
+  </div>
+
+  <!-- ===== CONTACT US MODAL ===== -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Contact Delivery Kart</h2>
+      <p>We’re here to help you 24/7. Reach out to us below.</p>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="4"
+          style="width:100%; padding:1rem; border-radius:10px; border:2px solid #9d8eff; resize:none; font-size:1rem;"></textarea>
+        <button type="submit" class="info-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== TELEPHONE MODAL ===== -->
+  <div id="telephone-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Customer Support</h2>
+      <p>Need instant help? Call or chat with us directly.</p>
+      <div style="margin-top:1.5rem; text-align:left;">
+        <p><strong>📞 Toll-Free:</strong> 1800-DELIVER (1800-335-4837)</p>
+        <p><strong>📱 WhatsApp Support:</strong> +91 98765 43210</p>
+        <p><strong>📧 Email:</strong> support@deliverykart.in</p>
+        <p><strong>⏰ Working Hours:</strong> 24/7 — Always Available</p>
+      </div>
+      <button class="info-btn" id="close-tel">Got it!</button>
+    </div>
+  </div>
 
 
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Delivery Kart</h3>
+        <p>"Delivering trust, speed & smiles across India."</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="pages/services.html">Services</a></li>
+          <li><a href="pages/contact.html">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Available Cities</h4>
+        <ul>
+          <li>Delhi</li>
+          <li>Mumbai</li>
+          <li>Hyderabad</li>
+          <li>Bangalore</li>
+          <li>Chennai</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-icons"><a href="https://facebook.com" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a><a
+            href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+              alt="Twitter" /></a><a href="https://instagram.com" target="_blank"><img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a><a
+            href="https://linkedin.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+              alt="LinkedIn" /></a></div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p>&copy; 2025 <strong>Delivery Kart™</strong>. All rights reserved.</p>
+    </div>
+  </footer>
 
-
+  <script src="js/script.js"></script>
 </body>
 
 </html>

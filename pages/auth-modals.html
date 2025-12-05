@@ -1,0 +1,90 @@
+<!-- This file is intentionally partial. It contains only modal markup and is injected via JS -->
+
+<!-- ALL MODALS MOVED FROM index.html -->
+
+<!-- ===== LOGIN MODAL ===== -->
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn close-modal">&times;</span>
+    <h2>Welcome Back!</h2>
+    <p>Log in to continue to Delivery Kart</p>
+
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email Address" required>
+      
+      <div class="password-field">
+        <input type="password" id="login-password" placeholder="Password" required>
+        <i class="fa-solid fa-eye toggle-eye" data-target="login-password"></i>
+      </div>
+
+      <button type="submit" class="login-btn" id="real-login-btn">Login</button>
+
+      <div id="login-role-options" class="hidden">
+        <button type="button" id="login-user" class="role-btn">Continue as User</button>
+        <button type="button" id="login-brand" class="role-btn">Continue as Brand Partner</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== SIGNUP MODAL ===== -->
+<div id="signup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn close-modal">&times;</span>
+    <h2>Create Your Account</h2>
+    <p>Join Delivery Kart and start shipping smarter!</p>
+
+    <form id="signup-form">
+      <input type="text" id="signup-name" placeholder="Full Name" required>
+      <input type="email" id="signup-email" placeholder="Email Address" required>
+      
+      <div class="password-field">
+        <input type="password" id="signup-password" placeholder="Create Password" required>
+        <i class="fa-solid fa-eye toggle-eye" data-target="signup-password"></i>
+      </div>
+
+      <button type="submit" class="login-btn" id="real-signup-btn">Sign Up</button>
+
+      <div id="signup-role-options" class="hidden">
+        <button type="button" id="signup-user" class="role-btn">Continue as User</button>
+        <button type="button" id="signup-brand" class="role-btn">Continue as Brand Partner</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== CONTACT MODAL ===== -->
+<div id="contact-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn close-modal">&times;</span>
+    <h2>Contact Delivery Kart</h2>
+    <p>We’re here to help you 24/7. Reach out to us below.</p>
+
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4"
+        style="width:100%; padding:1rem; border-radius:10px; border:2px solid #9d8eff; resize:none; font-size:1rem;"></textarea>
+
+      <button type="submit" class="info-btn">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== TELEPHONE MODAL ===== -->
+<div id="telephone-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn close-modal">&times;</span>
+    <h2>Customer Support</h2>
+    <p>Need instant help? Call or chat with us directly.</p>
+
+    <div style="margin-top:1.5rem; text-align:left;">
+      <p><strong>📞 Toll-Free:</strong> 1800-DELIVER (1800-335-4837)</p>
+      <p><strong>📱 WhatsApp Support:</strong> +91 98765 43210</p>
+      <p><strong>📧 Email:</strong> support@deliverykart.in</p>
+      <p><strong>⏰ Working Hours:</strong> 24/7 — Always Available</p>
+    </div>
+
+    <button class="info-btn close-modal">Got it!</button>
+  </div>
+</div>
