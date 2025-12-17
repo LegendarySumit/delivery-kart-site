@@ -1,5 +1,3 @@
-<div align="center">
-
 # 🛒 Delivery Kart
 
 **A fully revamped, multi-page e-commerce web application built with vanilla JavaScript**
@@ -176,23 +174,6 @@ Potential improvements for future iterations:
 - [ ] API integration for dynamic product data
 - [ ] Form validation enhancements
 - [ ] Accessibility improvements (ARIA labels, keyboard navigation)
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-### Homepage
-![Homepage](https://via.placeholder.com/800x400?text=Add+Homepage+Screenshot)
-
-### Authentication
-![Authentication](https://via.placeholder.com/800x400?text=Add+Auth+Screenshot)
-
-### Product Sections
-![Products](https://via.placeholder.com/800x400?text=Add+Products+Screenshot)
-
-</div>
 
 ---
 
