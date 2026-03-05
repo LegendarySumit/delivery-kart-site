@@ -41,22 +41,75 @@ function updateHeaderUI() {
     if (!existingProfile) {
       const navList = document.querySelector(".right-links");
       const li = document.createElement("li");
-
+      li.className = "profile-dropdown-wrap";
       li.innerHTML = `
-        <a href="#" id="profile-btn">${storedName ? storedName : "Profile"} <i class="fa-solid fa-user"></i></a>
+        <button id="profile-btn" class="profile-pill" aria-expanded="false">
+          <span class="profile-pill-avatar"><i class="fa-solid fa-user"></i></span>
+          <span class="profile-pill-name">${storedName || "Profile"}</span>
+          <i class="fa-solid fa-chevron-down profile-pill-caret"></i>
+        </button>
+        <div class="profile-dropdown" id="profile-dropdown">
+          <div class="profile-dropdown-header">
+            <div class="pd-avatar"><i class="fa-solid fa-user"></i></div>
+            <div>
+              <div class="pd-name">${storedName || "User"}</div>
+              <div class="pd-email">${storedEmail || ""}</div>
+            </div>
+          </div>
+          <div class="profile-dropdown-body">
+            <a href="${window.location.pathname.includes('/pages/') ? '' : 'pages/'}profile.html" class="pd-item">
+              <span class="pd-icon"><i class="fa-solid fa-id-card"></i></span> View Profile
+            </a>
+            <a href="${window.location.pathname.includes('/pages/') ? '' : 'pages/'}profile.html#address" class="pd-item">
+              <span class="pd-icon"><i class="fa-solid fa-map-location-dot"></i></span> My Address
+            </a>
+            <a href="#" class="pd-item">
+              <span class="pd-icon"><i class="fa-solid fa-box-open"></i></span> My Orders
+            </a>
+          </div>
+          <div class="profile-dropdown-footer">
+            <button class="pd-logout" id="header-logout-btn">
+              <span class="pd-icon"><i class="fa-solid fa-right-from-bracket"></i></span> Logout
+            </button>
+          </div>
+        </div>
       `;
-
       navList.appendChild(li);
 
-      document.getElementById("profile-btn").onclick = (e) => {
+      // Toggle dropdown
+      const pillBtn = document.getElementById("profile-btn");
+      const dropdown = document.getElementById("profile-dropdown");
+
+      pillBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = pillBtn.getAttribute("aria-expanded") === "true";
+        pillBtn.setAttribute("aria-expanded", String(!open));
+        dropdown.classList.toggle("open", !open);
+      });
+
+      document.addEventListener("click", () => {
+        pillBtn.setAttribute("aria-expanded", "false");
+        dropdown.classList.remove("open");
+      });
+
+      document.getElementById("header-logout-btn").addEventListener("click", (e) => {
         e.preventDefault();
-        const role = localStorage.getItem("dk_role") || "user";
-        const pathPrefix = window.location.pathname.includes('/pages/') ? '' : 'pages/';
-        window.location.href = `${pathPrefix}profile.html?mode=${role}`;
-      };
+        if (typeof logoutUser === "function") {
+          try { logoutUser(); } catch(err) {/**/}
+        } else {
+          ["dk_logged_in","dk_role"].forEach(k => localStorage.removeItem(k));
+          updateHeaderUI();
+        }
+      });
+
     } else {
-      // if profile link exists update label
-      existingProfile.innerHTML = `${storedName ? storedName : "Profile"} <i class="fa-solid fa-user"></i>`;
+      // update name/email in existing dropdown
+      const nameEl = document.querySelector(".pd-name");
+      const emailEl = document.querySelector(".pd-email");
+      const pillName = document.querySelector(".profile-pill-name");
+      if (nameEl) nameEl.textContent = storedName || "User";
+      if (emailEl) emailEl.textContent = storedEmail || "";
+      if (pillName) pillName.textContent = storedName || "Profile";
     }
 
   } else {
@@ -90,19 +143,13 @@ function closeModal(id) {
    LOGIN MODAL
    ============================================================ */
 
-const loginBtn = document.getElementById("login-btn");
 const loginModal = document.getElementById("login-modal");
 const loginForm = document.getElementById("login-form");
 const closeLoginBtn = loginModal?.querySelector(".close-btn");
 
-if (loginBtn && loginModal) {
-  loginBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal("login-modal");
-  });
-
-  if (closeLoginBtn) closeLoginBtn.addEventListener("click", () => closeModal("login-modal"));
-
+// Close login modal if opened programmatically
+if (closeLoginBtn) closeLoginBtn.addEventListener("click", () => closeModal("login-modal"));
+if (loginModal) {
   window.addEventListener("click", (e) => {
     if (e.target === loginModal) closeModal("login-modal");
   });
@@ -171,21 +218,15 @@ if (loginBrand) {
    SIGNUP MODAL
    ============================================================ */
 
-const signupBtn = document.querySelector('.right-links li:nth-child(2) a');
 const signupModal = document.getElementById("signup-modal");
 const signupClose = signupModal?.querySelector(".close-btn");
 const signupForm = document.getElementById("signup-form");
 const signupToggle = document.getElementById("toggleSignupPassword");
 const signupPassword = document.getElementById("signup-password");
 
-if (signupBtn && signupModal) {
-  signupBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal("signup-modal");
-  });
-
-  if (signupClose) signupClose.addEventListener("click", () => closeModal("signup-modal"));
-
+// Close signup modal if opened programmatically
+if (signupClose) signupClose.addEventListener("click", () => closeModal("signup-modal"));
+if (signupModal) {
   signupModal.addEventListener("click", (e) => {
     if (e.target === signupModal) closeModal("signup-modal");
   });

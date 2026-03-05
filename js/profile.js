@@ -11,7 +11,13 @@
     email1: "dk_user_email",
     email2: "dk_email",
     phone: "dk_phone",
+    city: "dk_city",
+    state: "dk_state",
+    postal: "dk_postal",
     address: "dk_address",
+    deliveryPhone: "dk_delivery_phone",
+    landmark: "dk_landmark",
+    defaultAddress: "dk_default_address",
     logged: "dk_logged_in",
     role: "dk_role"
   };
@@ -29,8 +35,20 @@
     },
     getPhone() { return localStorage.getItem(Keys.phone) || ""; },
     setPhone(v) { localStorage.setItem(Keys.phone, v || ""); },
+    getCity() { return localStorage.getItem(Keys.city) || ""; },
+    setCity(v) { localStorage.setItem(Keys.city, v || ""); },
+    getState() { return localStorage.getItem(Keys.state) || ""; },
+    setState(v) { localStorage.setItem(Keys.state, v || ""); },
+    getPostal() { return localStorage.getItem(Keys.postal) || ""; },
+    setPostal(v) { localStorage.setItem(Keys.postal, v || ""); },
     getAddress() { return localStorage.getItem(Keys.address) || ""; },
     setAddress(v) { localStorage.setItem(Keys.address, v || ""); },
+    getDeliveryPhone() { return localStorage.getItem(Keys.deliveryPhone) || ""; },
+    setDeliveryPhone(v) { localStorage.setItem(Keys.deliveryPhone, v || ""); },
+    getLandmark() { return localStorage.getItem(Keys.landmark) || ""; },
+    setLandmark(v) { localStorage.setItem(Keys.landmark, v || ""); },
+    getDefaultAddress() { return localStorage.getItem(Keys.defaultAddress) === "true"; },
+    setDefaultAddress(v) { localStorage.setItem(Keys.defaultAddress, v ? "true" : "false"); },
     clearLogin() {
       localStorage.removeItem(Keys.logged);
       localStorage.removeItem(Keys.role);
@@ -41,38 +59,83 @@
   // Elements
   const asideNameEl = document.getElementById("aside-name");
   const asideEmailEl = document.getElementById("aside-email");
+  const roleBadgeEl = document.getElementById("role-badge");
   const nameInp = document.getElementById("name");
   const emailInp = document.getElementById("email");
   const phoneInp = document.getElementById("phone");
+  const cityInp = document.getElementById("city");
+  const stateInp = document.getElementById("state");
+  const postalInp = document.getElementById("postal");
   const addressTa = document.getElementById("address");
+  const deliveryPhoneInp = document.getElementById("delivery-phone");
+  const landmarkInp = document.getElementById("landmark");
+  const defaultAddressCheck = document.getElementById("default-address");
   const saveProfileBtn = document.getElementById("save-profile");
   const saveAddressBtn = document.getElementById("save-address");
   const logoutBtn = document.getElementById("aside-logout");
-  const continueLink = document.getElementById("aside-continue");
-  const editAddressBtn = document.getElementById("edit-address-btn");
 
   function populateUI() {
     const name = LS.getName();
     const email = LS.getEmail();
     const phone = LS.getPhone();
+    const city = LS.getCity();
+    const state = LS.getState();
+    const postal = LS.getPostal();
     const address = LS.getAddress();
+    const deliveryPhone = LS.getDeliveryPhone();
+    const landmark = LS.getLandmark();
+    const isDefault = LS.getDefaultAddress();
+    const role = localStorage.getItem(Keys.role) || "user";
 
     asideNameEl.textContent = name || "User";
     asideEmailEl.textContent = email || "—";
     nameInp.value = name;
     emailInp.value = email;
     phoneInp.value = phone;
+    cityInp.value = city;
+    stateInp.value = state;
+    postalInp.value = postal;
     addressTa.value = address;
+    deliveryPhoneInp.value = deliveryPhone;
+    landmarkInp.value = landmark;
+    defaultAddressCheck.checked = isDefault;
 
-    // ensure continue link respects role if present
-    const role = localStorage.getItem(Keys.role) || "user";
-    continueLink.href = role === "brand" ? "businesspart.html" : "index.html";
+    // Update role badge
+    if (role === "brand") {
+      roleBadgeEl.innerHTML = '<i class="fa-solid fa-store"></i> Brand Partner';
+    } else {
+      roleBadgeEl.innerHTML = '<i class="fa-solid fa-briefcase"></i> Personal User';
+    }
+
+    // Profile completion bar
+    const fields = [name, email, phone, city, state, postal, address, deliveryPhone, landmark];
+    const filled = fields.filter(Boolean).length;
+    const pct = Math.round((filled / fields.length) * 100);
+    const fillEl = document.getElementById("completion-fill");
+    const pctEl = document.getElementById("completion-pct");
+    if (fillEl) fillEl.style.width = pct + "%";
+    if (pctEl) pctEl.textContent = pct + "%";
+
+    // Last login
+    const lastLoginEl = document.getElementById("last-login");
+    if (lastLoginEl) {
+      const stored = localStorage.getItem("dk_last_login");
+      if (stored) {
+        const d = new Date(stored);
+        const today = new Date();
+        const isToday = d.toDateString() === today.toDateString();
+        lastLoginEl.textContent = isToday ? "Today" : d.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+      }
+    }
   }
 
   // Save profile
   saveProfileBtn.addEventListener("click", function () {
     const name = nameInp.value.trim();
     const phone = phoneInp.value.trim();
+    const city = cityInp.value.trim();
+    const state = stateInp.value.trim();
+    const postal = postalInp.value.trim();
 
     if (name) {
       LS.setName(name);
@@ -81,9 +144,16 @@
     if (phone) {
       LS.setPhone(phone);
     }
+    if (city) {
+      LS.setCity(city);
+    }
+    if (state) {
+      LS.setState(state);
+    }
+    if (postal) {
+      LS.setPostal(postal);
+    }
 
-    // If page didn't have an email but the user typed one elsewhere previously, we preserve.
-    // (email is readonly here — it's set at signup/login)
     populateUI();
 
     // if the global header updater exists, call it
@@ -98,15 +168,17 @@
   // Save address
   saveAddressBtn.addEventListener("click", function () {
     const addr = addressTa.value.trim();
-    LS.setAddress(addr);
-    populateUI();
-    showToast("Default address saved");
-  });
+    const dPhone = deliveryPhoneInp.value.trim();
+    const lmark = landmarkInp.value.trim();
+    const isDefault = defaultAddressCheck.checked;
 
-  // Edit address button - focuses the textarea and scrolls to it
-  editAddressBtn.addEventListener("click", function () {
-    addressTa.focus();
-    addressTa.scrollIntoView({ behavior: "smooth", block: "center" });
+    LS.setAddress(addr);
+    if (dPhone) LS.setDeliveryPhone(dPhone);
+    if (lmark) LS.setLandmark(lmark);
+    LS.setDefaultAddress(isDefault);
+
+    populateUI();
+    showToast("Address saved successfully");
   });
 
   // Logout clears login flags and redirects to homepage
@@ -144,6 +216,12 @@
       t.style.opacity = "0";
     }, 1200);
     setTimeout(()=> document.body.removeChild(t), 1600);
+  }
+
+  // Stamp last login on first visit to this session
+  if (!sessionStorage.getItem("dk_login_stamped")) {
+    localStorage.setItem("dk_last_login", new Date().toISOString());
+    sessionStorage.setItem("dk_login_stamped", "1");
   }
 
   // init

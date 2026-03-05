@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Delivery Kart</title>
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      background: #f0eeff;
+    }
+
+    /* ==============================
+       LEFT — BRAND PANEL
+    ============================== */
+    .brand-panel {
+      width: 44%;
+      min-height: 100vh;
+      background: linear-gradient(150deg, #12084a 0%, #2e1e96 45%, #6a56e8 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative circles */
+    .brand-panel::before {
+      content: '';
+      position: absolute;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      bottom: -100px; right: -100px;
+      pointer-events: none;
+    }
+    .brand-panel::after {
+      content: '';
+      position: absolute;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      top: 60px; right: 40px;
+      pointer-events: none;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative; z-index: 1;
+    }
+    .brand-logo img {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+    .brand-logo-name {
+      font-size: 21px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-hero {
+      position: relative; z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12px 0 32px;
+    }
+
+    .brand-delivery-icon {
+      font-size: 72px;
+      margin-bottom: 24px;
+      display: inline-block;
+      animation: floatIcon 3.5s ease-in-out infinite;
+    }
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-14px); }
+    }
+
+    .brand-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      color: #c4b8ff;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .brand-headline {
+      font-size: 34px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.22;
+      margin-bottom: 16px;
+    }
+    .brand-headline span { color: #ffb347; }
+
+    .brand-subtext {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 340px;
+    }
+
+    .brand-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .stat-icon-box {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .stat-row:hover .stat-icon-box { transform: scale(1.1); }
+    .stat-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .stat-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .brand-footer {
+      position: relative; z-index: 1;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.3px;
+    }
+
+    /* ==============================
+       RIGHT — FORM PANEL
+    ============================== */
+    .form-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 52px 64px;
+      background: #fff;
+      overflow-y: auto;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #7c5fe6;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: gap 0.2s ease, opacity 0.2s ease;
+    }
+    .back-link:hover { gap: 11px; opacity: 0.7; }
+
+    .form-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .form-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #7c5fe6;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: #ede8ff;
+      border: 1px solid #d4c9f7;
+      padding: 5px 13px;
+      border-radius: 999px;
+    }
+    .form-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: #16103a;
+      margin: 0 0 10px 0;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+    .form-title span {
+      background: linear-gradient(135deg, #7c5fe6, #a88df0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .form-subtitle {
+      font-size: 14px;
+      color: #8e8eaa;
+      margin: 0 0 28px 0;
+      font-weight: 400;
+    }
+    .form-subtitle a {
+      color: #7c5fe6;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid #d4c9f7;
+      transition: border-color 0.2s;
+    }
+    .form-subtitle a:hover {
+      border-bottom-color: #7c5fe6;
+    }
+
+    /* Input groups */
+    .field {
+      margin-bottom: 18px;
+    }
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #666;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      color: #b8b0f0;
+      font-size: 14px;
+      pointer-events: none;
+    }
+    .input-wrap input {
+      width: 100%;
+      padding: 13px 44px 13px 42px;
+      border: 1.5px solid #e4e0ff;
+      border-radius: 12px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      color: #16103a;
+      background: #faf9ff;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .input-wrap input:focus {
+      border-color: #7c6fff;
+      box-shadow: 0 0 0 4px rgba(124,111,255,0.13);
+      background: #fff;
+    }
+    .input-wrap input::placeholder { color: #c8c4e0; }
+    .eye-btn {
+      position: absolute;
+      right: 13px;
+      color: #c0b8e8;
+      cursor: pointer;
+      font-size: 14px;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .eye-btn:hover { color: #7c6fff; }
+
+    /* Options row */
+    .options-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: #666;
+      cursor: pointer;
+    }
+    .check-label input { accent-color: #7c6fff; cursor: pointer; }
+    .forgot-link {
+      font-size: 13px;
+      color: #7c6fff;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+
+    /* CTA button */
+    .btn-cta {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #7c5fe6 0%, #a88df0 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      letter-spacing: 0.4px;
+      box-shadow: 0 5px 18px rgba(124, 95, 230, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(124, 95, 230, 0.45);
+    }
+    .btn-cta:active { transform: translateY(0); }
+    .btn-cta:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Error message */
+    .error-msg {
+      font-size: 12px;
+      color: #e53935;
+      margin-top: 6px;
+      font-weight: 500;
+      display: none;
+    }
+
+    /* Role selection */
+    .role-section {
+      display: none;
+      margin-top: 22px;
+      animation: slideUp 0.32s ease;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .role-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #aaa;
+      text-align: center;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .role-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .role-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 18px 10px;
+      border: 2px solid #e4e0ff;
+      border-radius: 14px;
+      background: #faf9ff;
+      cursor: pointer;
+      transition: border-color 0.22s, background 0.22s, transform 0.22s, box-shadow 0.22s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .role-card:hover {
+      border-color: #7c6fff;
+      background: #f0edff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(124,111,255,0.18);
+    }
+    .role-card i {
+      font-size: 26px;
+      color: #7c6fff;
+    }
+    .role-card strong {
+      font-size: 13px;
+      font-weight: 700;
+      color: #16103a;
+    }
+    .role-card span {
+      font-size: 11px;
+      color: #9090b0;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Bottom alt link */
+    .alt-link {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 13px;
+      color: #9090b0;
+    }
+    .alt-link a {
+      color: #7c6fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .alt-link a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 840px) {
+      .brand-panel { display: none; }
+      .form-panel { padding: 40px 28px; }
+    }
+    @media (max-width: 480px) {
+      .form-panel { padding: 32px 20px; }
+      .role-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== LEFT: BRAND PANEL ===== -->
+  <div class="brand-panel">
+    <a href="../index.html" class="brand-logo" style="text-decoration:none;">
+      <img src="../assets/images/images.webp" alt="Delivery Kart Logo" />
+      <span class="brand-logo-name">Delivery Kart</span>
+    </a>
+
+    <div class="brand-hero">
+      <p class="brand-eyebrow">India's #1 Delivery Platform</p>
+      <h1 class="brand-headline">Fastest &amp; <span>In-Time</span><br>Delivery.</h1>
+      <p class="brand-subtext">
+        Get your essential products delivered at your doorstep without any hassle. Trusted by millions across India.
+      </p>
+
+      <div class="brand-stats">
+        <div class="stat-row">
+          <div class="stat-icon-box">📦</div>
+          <div>
+            <strong class="stat-title">1 Million+ Deliveries</strong>
+            <span class="stat-desc">Completed with 98.9% satisfaction</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-icon-box">🌍</div>
+          <div>
+            <strong class="stat-title">500+ Cities Covered</strong>
+            <span class="stat-desc">Pan-India operations &amp; regional network</span>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-icon-box">⚡</div>
+          <div>
+            <strong class="stat-title">Same-Day Delivery</strong>
+            <span class="stat-desc">Express logistics for urgent orders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="brand-footer">&copy; 2025 Delivery Kart™. All rights reserved.</p>
+  </div>
+
+  <!-- ===== RIGHT: FORM PANEL ===== -->
+  <div class="form-panel">
+    <div class="form-box">
+
+      <div class="form-topbar">
+        <a href="../index.html" class="back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+        <p class="form-eyebrow"><i class="fa-solid fa-lock"></i> Welcome Back</p>
+      </div>
+      <h1 class="form-title">Sign <span>In</span></h1>
+      <p class="form-subtitle">
+        Don't have an account? <a href="signup.html">Register for free</a>
+      </p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="login-email">Email Address</label>
+          <div class="input-wrap">
+            <i class="fa-regular fa-envelope input-icon"></i>
+            <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email" />
+          </div>
+          <p class="error-msg" id="email-error">Please enter a valid email address.</p>
+        </div>
+
+        <div class="field">
+          <label for="login-password">Password</label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" />
+            <button type="button" class="eye-btn" id="toggleLoginPwd" aria-label="Toggle password visibility">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <p class="error-msg" id="pass-error">Please enter your password.</p>
+        </div>
+
+        <div class="options-row">
+          <label class="check-label">
+            <input type="checkbox" id="rememberMe" /> Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-cta" id="login-submit-btn">
+          <i class="fa-solid fa-right-to-bracket"></i>&nbsp; Sign In
+        </button>
+      </form>
+
+      <!-- Role selection — appears after form submit -->
+      <div class="role-section" id="role-section">
+        <p class="role-label">Choose how you'd like to continue</p>
+        <div class="role-cards">
+          <button class="role-card" id="login-user">
+            <i class="fa-solid fa-user-circle"></i>
+            <strong>Personal User</strong>
+            <span>Track &amp; manage your personal deliveries</span>
+          </button>
+          <button class="role-card" id="login-brand">
+            <i class="fa-solid fa-store"></i>
+            <strong>Brand Partner</strong>
+            <span>Manage business shipments &amp; analytics</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="alt-link">New to Delivery Kart? <a href="signup.html">Create an account &rarr;</a></p>
+
+    </div>
+  </div>
+
+  <script>
+    // Redirect if already logged in
+    if (localStorage.getItem('dk_logged_in') === 'true') {
+      window.location.replace('../index.html');
+    }
+
+    // Password visibility toggle
+    document.getElementById('toggleLoginPwd').addEventListener('click', function () {
+      const pwd = document.getElementById('login-password');
+      const icon = this.querySelector('i');
+      const isHidden = pwd.type === 'password';
+      pwd.type = isHidden ? 'text' : 'password';
+      icon.classList.toggle('fa-eye', !isHidden);
+      icon.classList.toggle('fa-eye-slash', isHidden);
+    });
+
+    // Form validation & submit
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const emailEl = document.getElementById('login-email');
+      const passEl  = document.getElementById('login-password');
+      const emailErr = document.getElementById('email-error');
+      const passErr  = document.getElementById('pass-error');
+
+      let valid = true;
+
+      // Reset
+      emailErr.style.display = 'none';
+      passErr.style.display  = 'none';
+      emailEl.style.borderColor = '';
+      passEl.style.borderColor  = '';
+
+      const emailVal = emailEl.value.trim();
+      const passVal  = passEl.value.trim();
+
+      if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        emailErr.style.display = 'block';
+        emailEl.style.borderColor = '#e53935';
+        emailEl.focus();
+        valid = false;
+      }
+      if (!passVal) {
+        passErr.style.display = 'block';
+        passEl.style.borderColor = '#e53935';
+        if (valid) passEl.focus();
+        valid = false;
+      }
+      if (!valid) return;
+
+      // Store credentials
+      localStorage.setItem('dk_email', emailVal);
+      localStorage.setItem('dk_user_email', emailVal);
+
+      // Show role selection
+      const submitBtn = document.getElementById('login-submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Signing in…';
+
+      setTimeout(() => {
+        submitBtn.style.display = 'none';
+        document.getElementById('role-section').style.display = 'block';
+        document.querySelector('.options-row').style.display = 'none';
+      }, 600);
+    });
+
+    // Role: Personal User
+    document.getElementById('login-user').addEventListener('click', function () {
+      localStorage.setItem('dk_logged_in', 'true');
+      localStorage.setItem('dk_role', 'user');
+      window.location.href = '../index.html';
+    });
+
+    // Role: Brand Partner
+    document.getElementById('login-brand').addEventListener('click', function () {
+      localStorage.setItem('dk_logged_in', 'true');
+      localStorage.setItem('dk_role', 'brand');
+      window.location.href = '../index.html';
+    });
+  </script>
+
+</body>
+</html>

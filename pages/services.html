@@ -33,10 +33,8 @@
             <div class="right-side">
                 <nav class="right-nav" aria-label="User actions">
                     <ul class="right-links">
-                        <li><a href="#" onclick="openLogin()">Login</a></li>
-                        <li><a href="#" onclick="openSignup()">Sign Up</a></li>
-                        <li><a href="#" onclick="openContact()">Contact Us</a></li>
-                        <li><a href="#" onclick="openTelephone()">Telephone</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
                         
                     </ul>
                 </nav>
@@ -111,30 +109,76 @@
 
     <!-- ===== PRICING SECTION ===== -->
     <section class="pricing-section">
-        <h2>Transparent & Flexible Pricing</h2>
-        <p>
-            Pay only for what you ship. No hidden costs, no minimum commitments — just affordable and transparent
-            logistics solutions.
-        </p>
+        <div class="pricing-eyebrow">
+            <i class="fa-solid fa-tags"></i> Simple Pricing
+        </div>
+        <h2>Transparent &amp; Flexible Pricing</h2>
+        <p>Pay only for what you ship. No hidden costs, no minimum commitments — just affordable and transparent logistics solutions.</p>
 
         <div class="pricing-cards">
+
+            <!-- LOCAL -->
             <div class="pricing-card">
-                <h3>Local</h3>
-                <p class="price">₹49</p>
-                <p>Per delivery within city limits</p>
+                <div class="pc-icon-wrap">
+                    <i class="fa-solid fa-city"></i>
+                </div>
+                <span class="pc-tier">Local</span>
+                <div class="pc-price-row">
+                    <span class="pc-currency">₹</span>
+                    <span class="pc-amount">49</span>
+                </div>
+                <p class="pc-tagline">Per delivery within city limits</p>
+                <ul class="pc-features">
+                    <li><i class="fa-solid fa-check"></i> Same-day delivery</li>
+                    <li><i class="fa-solid fa-check"></i> Real-time tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Proof of delivery</li>
+                    <li><i class="fa-solid fa-check"></i> In-app notifications</li>
+                </ul>
+                <a href="contact.html" class="pc-btn">Get Started</a>
             </div>
 
-            <div class="pricing-card">
-                <h3>National</h3>
-                <p class="price">₹149</p>
-                <p>Pan-India shipping with tracking and support</p>
+            <!-- NATIONAL (featured) -->
+            <div class="pricing-card pricing-card--featured">
+                <div class="pc-badge"><i class="fa-solid fa-star"></i> Most Popular</div>
+                <div class="pc-icon-wrap">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <span class="pc-tier">National</span>
+                <div class="pc-price-row">
+                    <span class="pc-currency">₹</span>
+                    <span class="pc-amount">149</span>
+                </div>
+                <p class="pc-tagline">Pan-India shipping with full support</p>
+                <ul class="pc-features">
+                    <li><i class="fa-solid fa-check"></i> Pan-India coverage</li>
+                    <li><i class="fa-solid fa-check"></i> Live shipment tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Priority partner support</li>
+                    <li><i class="fa-solid fa-check"></i> Automated status updates</li>
+                    <li><i class="fa-solid fa-check"></i> Bulk order discounts</li>
+                </ul>
+                <a href="contact.html" class="pc-btn">Get Started</a>
             </div>
 
+            <!-- ENTERPRISE -->
             <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <p class="price">Custom</p>
-                <p>Volume pricing, dedicated support, and SLA guarantees</p>
+                <div class="pc-icon-wrap">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <span class="pc-tier">Enterprise</span>
+                <div class="pc-price-row">
+                    <span class="pc-amount pc-custom">Custom</span>
+                </div>
+                <p class="pc-tagline">Volume pricing with SLA guarantees</p>
+                <ul class="pc-features">
+                    <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+                    <li><i class="fa-solid fa-check"></i> Custom SLA agreements</li>
+                    <li><i class="fa-solid fa-check"></i> API integration support</li>
+                    <li><i class="fa-solid fa-check"></i> Advanced analytics</li>
+                    <li><i class="fa-solid fa-check"></i> 24/7 priority support</li>
+                </ul>
+                <a href="contact.html" class="pc-btn">Contact Sales</a>
             </div>
+
         </div>
     </section>
 

@@ -1,243 +1,675 @@
 :root {
-  --purple1: #9d8eff;
-  --purple2: #a978ff;
-  --purple-strong: #5a35ff;
-  --text-dark: #2b2170;
-  --muted: #6a4cff;
-  --card: #ffffff;
-  --radius: 14px;
-  --shadow: 0 8px 24px rgba(157, 142, 255, 0.15);
+  --card-bg: linear-gradient(145deg, #ede8ff 0%, #f5f1ff 100%);
+  --card-border: #d4c9f7;
+  --card-text: #1a1a2e;
+  --card-muted: #5a4f8a;
+  --card-surface: rgba(255,255,255,0.55);
+  --card-surface-border: rgba(180,160,240,0.35);
+  --accent-gradient: linear-gradient(135deg, #7c5fe6 0%, #a88df0 100%);
+  --text-dark: #1a1a1a;
+  --text-muted: #666;
+  --border-light: #e8e8e8;
+  --bg-light: #f9f9f9;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* PAGE BG */
+/* PAGE BACKGROUND */
 .profile-page {
-  background: linear-gradient(180deg, #f7f5ff, #ece8ff);
-  padding: 30px 0 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #f5f0ff 0%, #faf8ff 100%);
+  padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
 }
 
-/* === GRID: 3 COLUMNS, EQUAL HEIGHT === */
-.profile-grid {
-  max-width: 1250px;
-  margin: 18px auto;
+/* TOP BAR */
+.profile-topbar {
+  max-width: 1400px;
+  margin: 0 auto 14px auto;
+  padding: 0 20px;
+}
+
+/* CONTAINER: 3-COLUMN LAYOUT */
+.profile-container {
+  max-width: 1400px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 310px 1fr 380px;
-  gap: 24px;
+  grid-template-columns: 320px 1fr 1fr;
+  gap: 28px;
+  padding: 0 20px;
   align-items: stretch;
-  /* make equal height */
 }
 
-/* === SIDEBAR === */
-.profile-sidebar {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow);
+/* ============================================ */
+/* LEFT PANEL: USER PROFILE                    */
+/* ============================================ */
+.profile-left-panel {
   display: flex;
   flex-direction: column;
 }
 
-/* Avatar */
-.avatar-wrapper {
-  text-align: center;
-  margin-bottom: 6px;
+/* Back to Home Link */
+.back-to-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2e1e96;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-bottom: 4px;
 }
 
-.avatar-circle {
-  width: 92px;
-  height: 92px;
+.back-to-home:hover {
+  gap: 12px;
+  color: #7c5fe6;
+}
+
+.back-to-home i {
+  font-size: 15px;
+}
+
+/* USER PROFILE CARD */
+.user-profile-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  box-shadow: 0 8px 28px rgba(100, 80, 200, 0.12);
+  text-align: center;
+  color: var(--card-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+/* USER AVATAR */
+.user-avatar {
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(135deg, #7c5fe6, #a88df0);
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--purple1), var(--purple2));
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 40px;
   color: white;
-  font-size: 36px;
-  margin: 12px auto 16px auto;
-  box-shadow: 0 10px 20px rgba(157, 142, 255, 0.22);
+  box-shadow: 0 8px 20px rgba(100, 80, 200, 0.25);
 }
 
-.avatar-wrapper h2 {
-  color: var(--text-dark);
-  margin: 8px 0 4px;
-  font-weight: 700;
+.user-name {
   font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 0 0;
+  letter-spacing: -0.5px;
+  color: var(--card-text);
 }
 
-.muted {
-  color: var(--muted);
+.user-email {
   font-size: 13px;
+  color: var(--card-muted);
   margin: 0;
+  font-weight: 500;
 }
 
-/* Sidebar buttons - reduced extra gap between avatar and buttons */
-.side-actions {
+/* ROLE BADGE */
+.role-badge {
+  background: linear-gradient(135deg, #7c5fe6, #a88df0);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  color: white;
+}
+
+.role-badge i {
+  font-size: 13px;
+}
+
+/* PROFILE TAGLINE */
+.profile-tagline {
+  font-size: 12px;
+  color: var(--card-muted);
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+/* ACCOUNT DETAILS */
+.account-details {
+  width: 100%;
+  background: var(--card-surface);
+  border: 1px solid var(--card-surface-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.account-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+}
+
+.account-detail-row i {
+  width: 15px;
+  text-align: center;
+  color: #7c5fe6;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.detail-label {
+  flex: 1;
+  color: var(--card-muted);
+  font-weight: 500;
+}
+
+.detail-value {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--card-text);
+}
+
+.status-active {
+  background: rgba(74, 222, 128, 0.2);
+  color: #6effa8;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* PROFILE COMPLETION */
+.profile-completion {
+  width: 100%;
+  background: var(--card-surface);
+  border: 1px solid var(--card-surface-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.completion-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--card-text);
+}
+
+.completion-bar {
+  width: 100%;
+  height: 7px;
+  background: var(--card-border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.completion-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c5fe6, #a88df0);
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+/* PROFILE STATS */
+.profile-stats {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 10px 0;
+  margin: 4px 0;
+  background: var(--card-surface);
+  border: 1px solid var(--card-surface-border);
+  border-radius: 10px;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--card-text);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--card-muted);
+  margin-top: 2px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--card-border);
+}
+/* LOGOUT BUTTON */
+.logout-btn {
+  width: 100%;
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.3s ease;
   margin-top: auto;
-  /* anchor to bottom so heights align consistently */
+}
+
+.logout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(124, 95, 230, 0.3);
+}
+
+.logout-btn:active {
+  transform: translateY(-1px);
+}
+
+/* MIDDLE PANEL */
+.profile-middle-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* RIGHT PANEL: PROFILE FORM                   */
+/* ============================================ */
+.profile-right-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* PROFILE SECTION */
+.profile-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #f0f0f0;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Purple DK button */
-.btn-purple {
-  background: linear-gradient(135deg, var(--purple1), var(--purple2));
-  padding: 11px 14px;
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+/* SECTION TITLE */
+.section-title {
+  font-size: 17px;
   font-weight: 700;
-  display: block;
-  font-size: 15px;
-}
-
-.btn-purple:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(157, 142, 255, 0.22);
-}
-
-/* === MIDDLE & RIGHT CARDS === */
-.profile-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* card titles */
-.profile-card h3 {
   color: var(--text-dark);
-  margin-bottom: 10px;
-  font-weight: 800;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title i {
+  color: #7c5fe6;
   font-size: 20px;
 }
 
-/* informative note above textarea */
-.address-note {
-  margin: 6px 0 10px;
-  color: var(--muted);
-  font-size: 13px;
+/* SECTION DESCRIPTION */
+.section-description {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
 }
 
-/* input rows */
+/* FORM ROW */
 .form-row {
-  margin-bottom: 12px;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .form-row label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* INPUT WRAPPER with Icon */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 12px;
+  color: #7c5fe6;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.form-row input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+/* CHECKBOX STYLING */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-dark);
+  cursor: pointer;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #7c5fe6;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--border-light);
+}
+
+/* DELIVERY PREFS */
+.delivery-prefs {
+  background: #f4f0ff;
+  border: 1px solid #d4c9f7;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prefs-title {
   font-size: 13px;
   font-weight: 700;
-  color: var(--purple-strong);
-}
-
-/* controls */
-input,
-textarea {
-  padding: 10px 12px;
-  border: 2px solid #e8deff;
-  border-radius: 10px;
-  font-size: 14px;
-  color: var(--text-dark);
-  background: #fff;
-}
-
-/* readonly styling */
-input[readonly] {
-  background: #f6f4ff;
-  color: var(--purple-strong);
-}
-
-/* smaller buttons consistently sized */
-.small-btn {
-  padding: 9px 14px;
-  font-size: 14px;
-  border-radius: 10px;
-  font-weight: 700;
-}
-
-/* outline variant behaviour */
-/* keep purple on hover — no temporary white flash */
-.outline {
-  background: transparent !important;
-  border: 2px solid var(--purple1);
-  color: var(--purple1);
-}
-
-.outline:hover {
-  background: linear-gradient(135deg, var(--purple1), var(--purple2));
-  transform: translateY(-2px);
-}
-
-/* action row align to right and slight spacing */
-.actions {
+  color: #5a3abf;
+  margin: 0 0 2px 0;
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 8px;
+  align-items: center;
+  gap: 7px;
 }
 
-/* Address textarea: make it taller but keep card balanced */
-.address-card textarea {
-  min-height: 140px;
-  /* adjusted height to remove empty white area */
-  resize: vertical;
-  margin-bottom: 12px;
-  padding: 12px;
+.pref-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.pref-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #7c5fe6;
+  cursor: pointer;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: #7c5fe6;
+  box-shadow: 0 0 0 4px rgba(124, 95, 230, 0.1);
+}
+
+.form-row input:hover:not(:focus) {
+  border-color: #c4b5f5;
+}
+
+/* Read-only email input */
+.form-row input[readonly] {
+  background: var(--bg-light);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* ADDRESS TEXTAREA */
+.address-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.address-wrapper i {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #7c5fe6;
   font-size: 14px;
+  pointer-events: none;
 }
 
-/* Reduce extra vertical padding on address card so button sits closer */
-.address-card {
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-
-/* Save btn in address card fits width with balanced padding */
-.save-btn {
-  padding: 10px 14px;
-  font-size: 15px;
-  border-radius: 10px;
+.profile-section textarea {
   width: 100%;
+  padding: 10px 12px 10px 40px;
+  min-height: 90px;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  resize: vertical;
+  transition: all 0.3s ease;
 }
 
-/* Ensure equal vertical alignment:
-   make sidebar & cards expand equally by using min-height that matches content.
-   Since grid align-items:stretch, the cards will stretch; using margin-top:auto on side-actions
-   anchors the sidebar buttons to the bottom so the vertical spacing matches the other two cards. */
+.profile-section textarea:focus {
+  outline: none;
+  border-color: #7c5fe6;
+  box-shadow: 0 0 0 4px rgba(124, 95, 230, 0.1);
+}
 
-/* Responsive adjustments */
-@media (max-width: 1050px) {
-  .profile-grid {
+.profile-section textarea:hover:not(:focus) {
+  border-color: #c4b5f5;
+}
+
+/* SAVE BUTTONS */
+.save-btn {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.save-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(124, 95, 230, 0.3);
+}
+
+.save-btn:active {
+  transform: translateY(-1px);
+}
+
+.save-btn i {
+  font-size: 15px;
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN                           */
+/* ============================================ */
+@media (max-width: 1200px) {
+  .profile-container {
+    grid-template-columns: 280px 1fr 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .profile-section {
+    padding: 22px;
+  }
+
+  .section-title {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .form-row {
+    margin-bottom: 12px;
+  }
+
+  .profile-section textarea {
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .profile-left-panel {
+    position: static;
+    gap: 15px;
+  }
+
+  .profile-section {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 20px 15px 40px;
+  }
+
+  .profile-container {
     grid-template-columns: 1fr;
-    padding: 0 18px;
+    gap: 20px;
   }
 
-  .avatar-circle {
-    margin-top: 8px;
+  .profile-left-panel {
+    gap: 12px;
   }
 
-  .side-actions {
-    margin-top: 16px;
+  .user-profile-card {
+    padding: 28px 24px;
   }
 
-  .address-card textarea {
-    min-height: 140px;
+  .user-avatar {
+    width: 75px;
+    height: 75px;
+    font-size: 36px;
+  }
+
+  .user-name {
+    font-size: 18px;
+  }
+
+  .profile-section {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .form-row {
+    gap: 4px;
+  }
+
+  .form-row input,
+  .profile-section textarea {
+    font-size: 14px;
+    padding: 12px 12px 12px 40px;
+  }
+
+  .profile-section textarea {
+    min-height: 100px;
   }
 }
 
-/* small accessibility niceties */
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 15px 10px 30px;
+  }
+
+  .user-profile-card {
+    padding: 22px 18px;
+  }
+
+  .user-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 34px;
+  }
+
+  .user-name {
+    font-size: 18px;
+  }
+
+  .profile-section {
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+
+  .save-btn {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ============================================ */
+/* ACCESSIBILITY                               */
+/* ============================================ */
 button:focus,
 a:focus,
 input:focus,
 textarea:focus {
-  outline: 3px solid rgba(90, 53, 255, 0.10);
+  outline: 3px solid rgba(124, 95, 230, 0.3);
   outline-offset: 2px;
 }

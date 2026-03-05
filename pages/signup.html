@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Delivery Kart</title>
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      background: #f0eeff;
+    }
+
+    /* ==============================
+       LEFT — BRAND PANEL
+    ============================== */
+    .brand-panel {
+      width: 44%;
+      min-height: 100vh;
+      background: linear-gradient(150deg, #0f1f5c 0%, #2e3baa 45%, #5f73e8 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-panel::before {
+      content: '';
+      position: absolute;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      bottom: -100px; right: -100px;
+      pointer-events: none;
+    }
+    .brand-panel::after {
+      content: '';
+      position: absolute;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      top: 50px; right: 40px;
+      pointer-events: none;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative; z-index: 1;
+      text-decoration: none;
+    }
+    .brand-logo img {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+    .brand-logo-name {
+      font-size: 21px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .brand-hero {
+      position: relative; z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12px 0 28px;
+    }
+
+    .brand-delivery-icon {
+      font-size: 72px;
+      margin-bottom: 24px;
+      display: inline-block;
+      animation: floatIcon 3.5s ease-in-out infinite;
+    }
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-14px); }
+    }
+
+    .brand-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      color: #b0c4ff;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .brand-headline {
+      font-size: 34px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.22;
+      margin-bottom: 16px;
+    }
+    .brand-headline span { color: #ffb347; }
+
+    .brand-subtext {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 340px;
+    }
+
+    .benefit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .benefit-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.13);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .benefit-title {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .benefit-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .brand-footer {
+      position: relative; z-index: 1;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ==============================
+       RIGHT — FORM PANEL
+    ============================== */
+    .form-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 44px 64px;
+      background: #fff;
+      overflow-y: auto;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #7c5fe6;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: gap 0.2s ease, opacity 0.2s ease;
+    }
+    .back-link:hover { gap: 11px; opacity: 0.7; }
+
+    .form-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .form-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #7c5fe6;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: #ede8ff;
+      border: 1px solid #d4c9f7;
+      padding: 5px 13px;
+      border-radius: 999px;
+    }
+    .form-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #16103a;
+      margin: 0 0 10px 0;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+    .form-title span {
+      background: linear-gradient(135deg, #7c5fe6, #a88df0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .form-subtitle {
+      font-size: 14px;
+      color: #8e8eaa;
+      margin: 0 0 24px 0;
+      font-weight: 400;
+    }
+    .form-subtitle a {
+      color: #7c5fe6;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid #d4c9f7;
+      transition: border-color 0.2s;
+    }
+    .form-subtitle a:hover {
+      border-bottom-color: #7c5fe6;
+    }
+
+    /* Input fields */
+    .field {
+      margin-bottom: 15px;
+    }
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #666;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      color: #b8b0f0;
+      font-size: 14px;
+      pointer-events: none;
+    }
+    .input-wrap input {
+      width: 100%;
+      padding: 12px 44px 12px 42px;
+      border: 1.5px solid #e4e0ff;
+      border-radius: 12px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      color: #16103a;
+      background: #faf9ff;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+    .input-wrap input:focus {
+      border-color: #7c6fff;
+      box-shadow: 0 0 0 4px rgba(124,111,255,0.13);
+      background: #fff;
+    }
+    .input-wrap input::placeholder { color: #c8c4e0; }
+    .eye-btn {
+      position: absolute;
+      right: 13px;
+      color: #c0b8e8;
+      cursor: pointer;
+      font-size: 14px;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .eye-btn:hover { color: #7c6fff; }
+
+    .error-msg {
+      font-size: 12px;
+      color: #e53935;
+      margin-top: 5px;
+      font-weight: 500;
+      display: none;
+    }
+
+    /* Password strength */
+    .strength-bar {
+      display: flex;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    .strength-seg {
+      flex: 1;
+      height: 4px;
+      border-radius: 999px;
+      background: #e4e0ff;
+      transition: background 0.3s;
+    }
+    .strength-text {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    /* CTA button */
+    .btn-cta {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #7c5fe6 0%, #a88df0 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      letter-spacing: 0.4px;
+      box-shadow: 0 5px 18px rgba(124, 95, 230, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      margin-top: 6px;
+    }
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(124, 95, 230, 0.45);
+    }
+    .btn-cta:active { transform: translateY(0); }
+    .btn-cta:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Terms consent */
+    .terms-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .terms-row input { accent-color: #7c6fff; margin-top: 2px; }
+    .terms-row span { font-size: 12px; color: #888; line-height: 1.5; }
+    .terms-row a { color: #7c6fff; text-decoration: none; font-weight: 500; }
+    .terms-row a:hover { text-decoration: underline; }
+
+    /* Role selection */
+    .role-section {
+      display: none;
+      margin-top: 22px;
+      animation: slideUp 0.32s ease;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .role-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #aaa;
+      text-align: center;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .role-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .role-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 18px 10px;
+      border: 2px solid #e4e0ff;
+      border-radius: 14px;
+      background: #faf9ff;
+      cursor: pointer;
+      transition: border-color 0.22s, background 0.22s, transform 0.22s, box-shadow 0.22s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .role-card:hover {
+      border-color: #7c6fff;
+      background: #f0edff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(124,111,255,0.18);
+    }
+    .role-card i { font-size: 26px; color: #7c6fff; }
+    .role-card strong { font-size: 13px; font-weight: 700; color: #16103a; }
+    .role-card span { font-size: 11px; color: #9090b0; text-align: center; line-height: 1.4; }
+
+    .alt-link {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 13px;
+      color: #9090b0;
+    }
+    .alt-link a { color: #7c6fff; font-weight: 600; text-decoration: none; }
+    .alt-link a:hover { text-decoration: underline; }
+
+    @media (max-width: 840px) {
+      .brand-panel { display: none; }
+      .form-panel { padding: 40px 28px; }
+    }
+    @media (max-width: 480px) {
+      .form-panel { padding: 32px 20px; }
+      .role-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== LEFT: BRAND PANEL ===== -->
+  <div class="brand-panel">
+    <a href="../index.html" class="brand-logo">
+      <img src="../assets/images/images.webp" alt="Delivery Kart Logo" />
+      <span class="brand-logo-name">Delivery Kart</span>
+    </a>
+
+    <div class="brand-hero">
+      <p class="brand-eyebrow">Join the Network</p>
+      <h1 class="brand-headline">Deliver Smarter,<br><span>Grow Faster.</span></h1>
+      <p class="brand-subtext">
+        Become part of India's most trusted delivery ecosystem and unlock a seamless logistics experience — for individuals and businesses alike.
+      </p>
+
+      <div class="benefit-list">
+        <div class="benefit-item">
+          <div class="benefit-icon">🔍</div>
+          <div>
+            <strong class="benefit-title">Real-Time Tracking</strong>
+            <span class="benefit-desc">Live order updates at every step of the delivery</span>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🔗</div>
+          <div>
+            <strong class="benefit-title">Seamless API Integration</strong>
+            <span class="benefit-desc">Connect your store &amp; automate your fulfillment pipeline</span>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">💬</div>
+          <div>
+            <strong class="benefit-title">24/7 Dedicated Support</strong>
+            <span class="benefit-desc">Chat, call or email — we're always here for you</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="brand-footer">&copy; 2025 Delivery Kart™. All rights reserved.</p>
+  </div>
+
+  <!-- ===== RIGHT: FORM PANEL ===== -->
+  <div class="form-panel">
+    <div class="form-box">
+
+      <div class="form-topbar">
+        <a href="../index.html" class="back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+        <p class="form-eyebrow"><i class="fa-solid fa-user-plus"></i> Get Started</p>
+      </div>
+      <h1 class="form-title">Create Your <span>Account</span></h1>
+      <p class="form-subtitle">
+        Already have an account? <a href="login.html">Sign in instead</a>
+      </p>
+
+      <form id="signup-form" novalidate>
+        <div class="field">
+          <label for="signup-name">Full Name</label>
+          <div class="input-wrap">
+            <i class="fa-regular fa-user input-icon"></i>
+            <input type="text" id="signup-name" placeholder="Rahul Sharma" autocomplete="name" />
+          </div>
+          <p class="error-msg" id="name-error">Please enter your full name.</p>
+        </div>
+
+        <div class="field">
+          <label for="signup-email">Email Address</label>
+          <div class="input-wrap">
+            <i class="fa-regular fa-envelope input-icon"></i>
+            <input type="email" id="signup-email" placeholder="you@example.com" autocomplete="email" />
+          </div>
+          <p class="error-msg" id="email-error">Please enter a valid email address.</p>
+        </div>
+
+        <div class="field">
+          <label for="signup-password">Password</label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="signup-password" placeholder="Create a strong password" autocomplete="new-password" />
+            <button type="button" class="eye-btn" id="toggleSignupPwd" aria-label="Toggle password visibility">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-seg" id="seg1"></div>
+            <div class="strength-seg" id="seg2"></div>
+            <div class="strength-seg" id="seg3"></div>
+            <div class="strength-seg" id="seg4"></div>
+          </div>
+          <p class="strength-text" id="strength-text">Enter a password</p>
+          <p class="error-msg" id="pass-error">Password must be at least 6 characters.</p>
+        </div>
+
+        <div class="field">
+          <label for="signup-confirm">Confirm Password</label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-shield-halved input-icon"></i>
+            <input type="password" id="signup-confirm" placeholder="Re-enter your password" autocomplete="new-password" />
+            <button type="button" class="eye-btn" id="toggleConfirmPwd" aria-label="Toggle confirm password visibility">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <p class="error-msg" id="confirm-error">Passwords do not match.</p>
+        </div>
+
+        <div class="terms-row">
+          <input type="checkbox" id="agreeTerms" />
+          <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+        </div>
+        <p class="error-msg" id="terms-error" style="margin-bottom:10px;">You must agree to the terms to continue.</p>
+
+        <button type="submit" class="btn-cta" id="signup-submit-btn">
+          <i class="fa-solid fa-user-plus"></i>&nbsp; Create Account
+        </button>
+      </form>
+
+      <!-- Role selection — appears after form submit -->
+      <div class="role-section" id="role-section">
+        <p class="role-label">How will you use Delivery Kart?</p>
+        <div class="role-cards">
+          <button class="role-card" id="signup-user">
+            <i class="fa-solid fa-user-circle"></i>
+            <strong>Personal User</strong>
+            <span>Track &amp; receive personal deliveries</span>
+          </button>
+          <button class="role-card" id="signup-brand">
+            <i class="fa-solid fa-store"></i>
+            <strong>Brand Partner</strong>
+            <span>Ship products &amp; grow your business</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="alt-link">Already have an account? <a href="login.html">Sign In &rarr;</a></p>
+
+    </div>
+  </div>
+
+  <script>
+    // Redirect if already logged in
+    if (localStorage.getItem('dk_logged_in') === 'true') {
+      window.location.replace('../index.html');
+    }
+
+    // Password eye toggles
+    function makeEyeToggle(btnId, inputId) {
+      document.getElementById(btnId).addEventListener('click', function () {
+        const pwd = document.getElementById(inputId);
+        const icon = this.querySelector('i');
+        const isHidden = pwd.type === 'password';
+        pwd.type = isHidden ? 'text' : 'password';
+        icon.classList.toggle('fa-eye', !isHidden);
+        icon.classList.toggle('fa-eye-slash', isHidden);
+      });
+    }
+    makeEyeToggle('toggleSignupPwd', 'signup-password');
+    makeEyeToggle('toggleConfirmPwd', 'signup-confirm');
+
+    // Password strength meter
+    document.getElementById('signup-password').addEventListener('input', function () {
+      const val = this.value;
+      const segs = [document.getElementById('seg1'), document.getElementById('seg2'),
+                    document.getElementById('seg3'), document.getElementById('seg4')];
+      const txt = document.getElementById('strength-text');
+
+      let score = 0;
+      if (val.length >= 6) score++;
+      if (val.length >= 10) score++;
+      if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+
+      const colors = ['#e53935', '#ff9800', '#ffb347', '#43a047'];
+      const labels = ['Weak', 'Fair', 'Good', 'Strong'];
+
+      segs.forEach((s, i) => {
+        s.style.background = i < score ? colors[score - 1] : '#e4e0ff';
+      });
+      txt.textContent = val.length === 0 ? 'Enter a password' : (labels[score - 1] || 'Weak');
+      txt.style.color = val.length === 0 ? '#aaa' : colors[score - 1] || '#e53935';
+    });
+
+    // Form submit & validation
+    document.getElementById('signup-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nameEl    = document.getElementById('signup-name');
+      const emailEl   = document.getElementById('signup-email');
+      const passEl    = document.getElementById('signup-password');
+      const confirmEl = document.getElementById('signup-confirm');
+      const termsEl   = document.getElementById('agreeTerms');
+
+      const nameErr    = document.getElementById('name-error');
+      const emailErr   = document.getElementById('email-error');
+      const passErr    = document.getElementById('pass-error');
+      const confirmErr = document.getElementById('confirm-error');
+      const termsErr   = document.getElementById('terms-error');
+
+      // Reset all errors
+      [nameErr, emailErr, passErr, confirmErr, termsErr].forEach(el => el.style.display = 'none');
+      [nameEl, emailEl, passEl, confirmEl].forEach(el => el.style.borderColor = '');
+
+      let valid = true;
+      let firstInvalid = null;
+
+      const nameVal    = nameEl.value.trim();
+      const emailVal   = emailEl.value.trim();
+      const passVal    = passEl.value;
+      const confirmVal = confirmEl.value;
+
+      if (!nameVal) {
+        nameErr.style.display = 'block'; nameEl.style.borderColor = '#e53935';
+        firstInvalid = firstInvalid || nameEl; valid = false;
+      }
+      if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        emailErr.style.display = 'block'; emailEl.style.borderColor = '#e53935';
+        firstInvalid = firstInvalid || emailEl; valid = false;
+      }
+      if (!passVal || passVal.length < 6) {
+        passErr.style.display = 'block'; passEl.style.borderColor = '#e53935';
+        firstInvalid = firstInvalid || passEl; valid = false;
+      }
+      if (passVal !== confirmVal) {
+        confirmErr.style.display = 'block'; confirmEl.style.borderColor = '#e53935';
+        firstInvalid = firstInvalid || confirmEl; valid = false;
+      }
+      if (!termsEl.checked) {
+        termsErr.style.display = 'block';
+        firstInvalid = firstInvalid || termsEl; valid = false;
+      }
+      if (!valid) { if (firstInvalid) firstInvalid.focus(); return; }
+
+      // Save to localStorage
+      localStorage.setItem('dk_user_name', nameVal);
+      localStorage.setItem('dk_user_email', emailVal);
+      localStorage.setItem('dk_name', nameVal);
+      localStorage.setItem('dk_email', emailVal);
+
+      // Show loading state, then reveal role selection
+      const submitBtn = document.getElementById('signup-submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Creating account…';
+
+      setTimeout(() => {
+        submitBtn.style.display = 'none';
+        document.getElementById('role-section').style.display = 'block';
+        document.querySelector('.terms-row').style.display = 'none';
+      }, 700);
+    });
+
+    // Role: Personal User
+    document.getElementById('signup-user').addEventListener('click', function () {
+      localStorage.setItem('dk_logged_in', 'true');
+      localStorage.setItem('dk_role', 'user');
+      window.location.href = '../index.html';
+    });
+
+    // Role: Brand Partner
+    document.getElementById('signup-brand').addEventListener('click', function () {
+      localStorage.setItem('dk_logged_in', 'true');
+      localStorage.setItem('dk_role', 'brand');
+      window.location.href = '../index.html';
+    });
+  </script>
+
+</body>
+</html>
