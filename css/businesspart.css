@@ -342,11 +342,213 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
 
-  .benefits-grid,
+/* EXTRA SMALL MOBILE (250px - 399px) */
+@media (max-width: 399px) {
+  .partners-hero {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .partners-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .partners-hero p {
+    font-size: 0.85rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .partner-types {
+    margin: 2rem auto;
+  }
+
+  .partner-types h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .partner-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .partner-card {
+    padding: 1.2rem 1rem;
+  }
+
+  .partner-card h3 {
+    font-size: 1rem;
+  }
+
+  .partner-card p {
+    font-size: 0.8rem;
+  }
+
+  .industries {
+    padding: 2rem 1rem;
+  }
+
+  .industries h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .industries p {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .industry-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .industry-card {
+    padding: 1.2rem 1rem;
+  }
+
+  .industry-card i {
+    font-size: 1.4rem;
+  }
+
+  .industry-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .partner-benefits {
+    margin: 2rem auto;
+  }
+
+  .partner-benefits h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .benefit-item {
+    padding: 1.2rem 1rem;
+  }
+
+  .benefit-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .benefit-item p {
+    font-size: 0.8rem;
+  }
+
+  .partner-form {
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .partner-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .partner-form input,
+  .partner-form select,
+  .partner-form textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .partner-form button {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .partner-cta {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+  }
+
+  .partner-cta h3 {
+    font-size: 1.3rem;
+  }
+
+  .partner-cta p {
+    font-size: 0.85rem;
+  }
+}
+
+/* SMALL MOBILE (400px - 599px) */
+@media (min-width: 400px) and (max-width: 599px) {
+  .partners-hero {
+    padding: 2.5rem 1.2rem 3rem;
+  }
+
+  .partners-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .partners-hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .partner-types {
+    margin: 2.5rem auto;
+  }
+
+  .partner-types h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .partner-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .partner-card {
+    padding: 1.4rem 1.2rem;
+  }
+
   .industry-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .benefit-item {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .partner-form {
+    padding: 2rem 1.2rem;
+  }
+
+  .partner-form input,
+  .partner-form select,
+  .partner-form textarea {
+    padding: 10px 14px;
+    font-size: 0.95rem;
   }
 
   .form-group.dual {
@@ -354,14 +556,167 @@
   }
 }
 
-@media (max-width: 480px) {
-
-  .benefits-grid,
-  .industry-grid {
-    grid-template-columns: 1fr;
+/* MEDIUM MOBILE (600px - 799px) */
+@media (min-width: 600px) and (max-width: 799px) {
+  .partners-hero {
+    padding: 3.5rem 2rem 4rem;
   }
 
   .partners-hero h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
+  }
+
+  .partners-hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 90%;
+    padding: 11px 20px;
+  }
+
+  .partner-types {
+    margin: 3rem auto;
+  }
+
+  .partner-types h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .industries {
+    padding: 3.5rem 2rem;
+  }
+
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .partner-benefits {
+    margin: 3rem auto;
+  }
+
+  .partner-benefits h2 {
+    font-size: 1.6rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .partner-form {
+    margin: 3rem auto;
+    padding: 2.5rem 2rem;
+  }
+
+  .partner-form h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-group.dual {
+    flex-direction: row;
+  }
+
+  .partner-cta {
+    padding: 3rem 2rem;
+    margin: 3rem auto;
+  }
+
+  .partner-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .partner-cta p {
+    font-size: 0.95rem;
+  }
+}
+
+/* TABLET (800px - 1023px) */
+@media (min-width: 800px) and (max-width: 1023px) {
+  .partners-hero {
+    padding: 4rem 2.5rem 4.5rem;
+  }
+
+  .partners-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 1.2rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: auto;
+  }
+
+  .partner-types {
+    margin: 4rem auto;
+  }
+
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .industries {
+    padding: 4rem 2.5rem;
+  }
+
+  .industry-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+  }
+
+  .partner-benefits {
+    margin: 4rem auto;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .partner-form {
+    margin: 4rem auto;
+    padding: 3rem 2.5rem;
+  }
+
+  .partner-cta {
+    padding: 4rem 2.5rem;
+    margin: 4rem auto;
+  }
+
+  .partner-cta h3 {
+    font-size: 1.6rem;
+  }
+}
+
+/* DESKTOP (1024px and above) */
+@media (min-width: 1024px) {
+  .partner-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .industry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

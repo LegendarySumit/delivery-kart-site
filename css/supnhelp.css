@@ -237,22 +237,6 @@
 .faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary::marker { display: none; }
 
-/* responsive adjustments */
-@media (max-width: 600px) {
-  .faq-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .faq-list summary {
-    padding: 1rem;
-  }
-
-  .faq-list summary i {
-    font-size: 1.1rem;
-  }
-}
-
-
 /* ===== CTA ===== */
 .support-cta {
   background: linear-gradient(90deg, #f3efff, #ebe3ff);
@@ -282,12 +266,293 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero-buttons {
-    flex-direction: column;
+
+/* EXTRA SMALL MOBILE (250px - 399px) */
+@media (max-width: 399px) {
+  .support-hero {
+    padding: 2rem 1rem 2.5rem;
   }
 
-  .faq-list details {
-    padding: 1rem;
+  .support-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .support-hero p {
+    font-size: 0.85rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .help-categories {
+    padding: 2rem 1rem;
+  }
+
+  .help-categories h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .help-card {
+    padding: 1.2rem 1rem;
+  }
+
+  .help-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .help-card p {
+    font-size: 0.8rem;
+  }
+
+  .faq-section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .faq-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .faq-list summary {
+    padding: 0.8rem;
+  }
+
+  .faq-list summary > span:not(.faq-icon-box) {
+    font-size: 0.85rem;
+  }
+
+  .faq-body {
+    padding: 0.2rem 0.8rem 1rem 3.2rem;
+  }
+
+  .faq-body p {
+    font-size: 0.8rem;
+  }
+
+  .support-cta {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+  }
+
+  .support-cta h2 {
+    font-size: 1.3rem;
+  }
+
+  .support-cta p {
+    font-size: 0.85rem;
+  }
+}
+
+/* SMALL MOBILE (400px - 599px) */
+@media (min-width: 400px) and (max-width: 599px) {
+  .support-hero {
+    padding: 2.5rem 1.2rem 3rem;
+  }
+
+  .support-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .support-hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 10px 18px;
+  }
+
+  .help-categories {
+    padding: 2.5rem 1rem;
+  }
+
+  .help-categories h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .help-card {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .faq-section {
+    margin: 2.5rem auto;
+    padding: 0 1.2rem;
+  }
+
+  .faq-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-list summary {
+    padding: 0.9rem;
+  }
+
+  .faq-body {
+    padding: 0.2rem 0.9rem 1rem 3.5rem;
+  }
+
+  .support-cta {
+    padding: 2.5rem 1.2rem;
+    margin: 2.5rem auto;
+  }
+
+  .support-cta h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* MEDIUM MOBILE (600px - 799px) */
+@media (min-width: 600px) and (max-width: 799px) {
+  .support-hero {
+    padding: 3.5rem 2rem 4rem;
+  }
+
+  .support-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .support-hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 85%;
+  }
+
+  .help-categories {
+    padding: 3.5rem 2rem;
+  }
+
+  .help-categories h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .help-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .faq-section {
+    margin: 3rem auto;
+    padding: 0 2rem;
+  }
+
+  .faq-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-list summary {
+    padding: 1rem 1.2rem;
+  }
+
+  .faq-body {
+    padding: 0.2rem 1.2rem 1.2rem 4rem;
+  }
+
+  .support-cta {
+    padding: 3rem 2rem;
+    margin: 3rem auto;
+  }
+
+  .support-cta h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* TABLET (800px - 1023px) */
+@media (min-width: 800px) and (max-width: 1023px) {
+  .support-hero {
+    padding: 4rem 2.5rem 4.5rem;
+  }
+
+  .support-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: auto;
+  }
+
+  .help-categories {
+    padding: 4rem 2.5rem;
+  }
+
+  .help-categories h2 {
+    font-size: 1.8rem;
+  }
+
+  .help-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .faq-section {
+    margin: 4rem auto;
+    padding: 0 2.5rem;
+  }
+
+  .faq-section h2 {
+    font-size: 2rem;
+  }
+
+  .support-cta {
+    padding: 4rem 2.5rem;
+    margin: 4rem auto;
+  }
+
+  .support-cta h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* DESKTOP (1024px and above) */
+@media (min-width: 1024px) {
+  .help-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 1rem;
   }
 }

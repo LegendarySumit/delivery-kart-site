@@ -417,9 +417,19 @@
     @media (max-width: 840px) {
       .brand-panel { display: none; }
       .form-panel { padding: 40px 28px; }
+      .form-title { font-size: 28px; }
     }
-    @media (max-width: 480px) {
-      .form-panel { padding: 32px 20px; }
+    @media (max-width: 600px) {
+      body { display: block; }
+      .form-panel { padding: 36px 20px; min-height: 100vh; }
+      .form-title { font-size: 24px; letter-spacing: -1px; }
+      .form-box { max-width: 100%; }
+      .form-topbar { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+    @media (max-width: 400px) {
+      .form-panel { padding: 24px 14px; }
+      .form-title { font-size: 20px; }
+      .btn-cta { font-size: 14px; padding: 12px; }
       .role-cards { grid-template-columns: 1fr; }
     }
   </style>

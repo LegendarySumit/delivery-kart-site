@@ -29,6 +29,10 @@ function updateHeaderUI() {
   const signupLi = document.querySelector('.right-links li:nth-child(2)');
   const existingProfile = document.getElementById("profile-btn");
 
+  // ---- mobile navbar-auth elements ----
+  const navbarAuth = document.querySelector('.navbar-auth');
+  const existingMobileProfile = document.getElementById('navbar-mobile-profile');
+
   // accept both variants that appear in your flows
   const isLoggedIn = localStorage.getItem("dk_logged_in") === "true";
   const storedName = localStorage.getItem("dk_user_name") || localStorage.getItem("dk_name") || "";
@@ -37,6 +41,85 @@ function updateHeaderUI() {
   if (isLoggedIn) {
     if (loginLi) loginLi.style.display = "none";
     if (signupLi) signupLi.style.display = "none";
+
+    // ---- mobile: hide Login/Sign Up links, show profile pill with dropdown ----
+    if (navbarAuth) {
+      navbarAuth.querySelectorAll(':scope > a').forEach(a => a.style.display = 'none');
+      if (!existingMobileProfile) {
+        const profilePath = window.location.pathname.includes('/pages/') ? 'profile.html' : 'pages/profile.html';
+        const wrap = document.createElement('div');
+        wrap.id = 'navbar-mobile-profile';
+        wrap.className = 'mobile-profile-wrap';
+        wrap.innerHTML = `
+          <button class="navbar-auth-profile" id="mobile-profile-btn" aria-expanded="false">
+            <span class="mobile-profile-avatar"><i class="fa-solid fa-user"></i></span>
+            <span class="mobile-profile-name">${storedName || 'Profile'}</span>
+            <i class="fa-solid fa-chevron-down mobile-profile-caret"></i>
+          </button>
+          <div class="mobile-profile-dropdown profile-dropdown" id="mobile-profile-dropdown">
+            <div class="profile-dropdown-header">
+              <div class="pd-avatar"><i class="fa-solid fa-user"></i></div>
+              <div>
+                <div class="pd-name">${storedName || 'User'}</div>
+                <div class="pd-email">${storedEmail || ''}</div>
+              </div>
+            </div>
+            <div class="profile-dropdown-body">
+              <a href="${profilePath}" class="pd-item">
+                <span class="pd-icon"><i class="fa-solid fa-id-card"></i></span> View Profile
+              </a>
+              <a href="${profilePath}#address" class="pd-item">
+                <span class="pd-icon"><i class="fa-solid fa-map-location-dot"></i></span> My Address
+              </a>
+              <a href="#" class="pd-item">
+                <span class="pd-icon"><i class="fa-solid fa-box-open"></i></span> My Orders
+              </a>
+            </div>
+            <div class="profile-dropdown-footer">
+              <button class="pd-logout" id="mobile-logout-btn">
+                <span class="pd-icon"><i class="fa-solid fa-right-from-bracket"></i></span> Logout
+              </button>
+            </div>
+          </div>
+        `;
+        navbarAuth.appendChild(wrap);
+
+        const mobileBtn = document.getElementById('mobile-profile-btn');
+        const mobileDropdown = document.getElementById('mobile-profile-dropdown');
+
+        mobileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const open = mobileBtn.getAttribute('aria-expanded') === 'true';
+          mobileBtn.setAttribute('aria-expanded', String(!open));
+          mobileDropdown.classList.toggle('open', !open);
+        });
+
+        document.addEventListener('click', () => {
+          if (mobileBtn) {
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileDropdown.classList.remove('open');
+          }
+        });
+
+        document.getElementById('mobile-logout-btn').addEventListener('click', (e) => {
+          e.preventDefault();
+          if (typeof logoutUser === 'function') {
+            try { logoutUser(); } catch(err) {/**/}
+          } else {
+            ['dk_logged_in', 'dk_role'].forEach(k => localStorage.removeItem(k));
+            updateHeaderUI();
+          }
+        });
+
+      } else {
+        const nameEl = existingMobileProfile.querySelector('.mobile-profile-name');
+        if (nameEl) nameEl.textContent = storedName || 'Profile';
+        const pdName = existingMobileProfile.querySelector('.pd-name');
+        if (pdName) pdName.textContent = storedName || 'User';
+        const pdEmail = existingMobileProfile.querySelector('.pd-email');
+        if (pdEmail) pdEmail.textContent = storedEmail || '';
+      }
+    }
 
     if (!existingProfile) {
       const navList = document.querySelector(".right-links");
@@ -115,6 +198,13 @@ function updateHeaderUI() {
   } else {
     if (loginLi) loginLi.style.display = "inline-block";
     if (signupLi) signupLi.style.display = "inline-block";
+
+    // ---- mobile: restore Login/Sign Up, remove profile dropdown ----
+    if (navbarAuth) {
+      navbarAuth.querySelectorAll(':scope > a').forEach(a => a.style.display = '');
+      const mp = document.getElementById('navbar-mobile-profile');
+      if (mp) mp.remove();
+    }
 
     if (existingProfile) existingProfile.parentElement.remove();
   }
@@ -366,3 +456,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", updateHeaderUI);
+
+/* ============================================================
+   HAMBURGER MENU TOGGLE
+   ============================================================ */
+(function () {
+  const btn = document.getElementById('hamburger-btn');
+  const links = document.getElementById('nav-links');
+  if (!btn || !links) return;
+
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const isOpen = links.classList.toggle('is-open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close menu on outside click
+  document.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('is-open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close menu when a nav link is clicked
+  links.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      links.classList.remove('is-open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();

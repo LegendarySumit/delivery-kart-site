@@ -459,26 +459,288 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
+
+/* EXTRA SMALL MOBILE (250px - 399px) */
+@media (max-width: 399px) {
+  .services-hero {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .services-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .services-hero p {
+    font-size: 0.9rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .service-card {
+    padding: 1.2rem 1rem;
+  }
+
+  .service-card i {
+    font-size: 1.8rem;
+  }
+
+  .service-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+  }
+
+  .pricing-section {
+    padding:  2rem 1rem 2.5rem;
+  }
+
+  .pricing-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .pricing-section > p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-cards {
+    gap: 1rem;
+  }
+
+  .pricing-card {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .pc-amount {
+    font-size: 2rem;
+  }
+
+  .pc-features {
+    margin: 1rem 0;
+  }
+
+  .pc-features li {
+    font-size: 0.8rem;
+  }
+
+  .services-cta {
+    padding: 2rem 1rem;
+    margin: 2rem 0.5rem;
+  }
+
+  .services-cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .services-cta p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* SMALL MOBILE (400px - 599px) */
+@media (min-width: 400px) and (max-width: 599px) {
+  .services-hero {
+    padding: 2.5rem 1.2rem 3rem;
+  }
+
+  .services-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .services-hero p {
+    font-size: 0.95rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 2.5rem 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .service-card {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .service-card i {
+    font-size: 2rem;
+  }
+
+  .pricing-section {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .pricing-section h2 {
+    font-size: 1.8rem;
+  }
+
   .pricing-cards {
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 1.2rem;
+  }
+
+  .pricing-card,
+  .pricing-card--featured {
+    width: 100%;
   }
 
   .pricing-card--featured {
     margin: 0;
-    width: 85%;
   }
 
-  .pricing-card {
-    width: 85%;
+  .services-cta {
+    padding: 2.5rem 1.2rem;
+    margin: 2.5rem 0.5rem;
+  }
+
+  .services-cta h2 {
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
+/* MEDIUM MOBILE (600px - 799px) */
+@media (min-width: 600px) and (max-width: 799px) {
+  .services-hero {
+    padding: 3.5rem 2rem 4rem;
+  }
+
+  .services-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .services-hero p {
+    font-size: 1rem;
+  }
+
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 1rem;
+  }
+
+  .service-card {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .pricing-section {
+    padding: 3.5rem 2rem 4rem;
+  }
+
+  .pricing-section h2 {
+    font-size: 2rem;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .pricing-card,
+  .pricing-card--featured {
+    width: 85%;
+  }
+
+  .pricing-card--featured {
+    margin: 0;
+  }
+
+  .services-cta {
+    padding: 3rem 2rem;
+    margin: 3rem 1.5rem;
+  }
+
+  .services-cta h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* TABLET (800px - 1023px) */
+@media (min-width: 800px) and (max-width: 1023px) {
+  .services-hero {
+    padding: 4rem 2.5rem 4.5rem;
+  }
+
+  .services-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    margin: 4rem 1.5rem;
+  }
+
+  .service-card {
+    padding: 2rem 1.6rem;
+  }
+
+  .pricing-section {
+    padding: 4rem 2.5rem 5rem;
+  }
+
+  .pricing-cards {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .pricing-card {
+    width: 45%;
+  }
+
+  .pricing-card--featured {
+    width: 55%;
+  }
+
+  .services-cta {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .services-cta h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* DESKTOP (1024px and above) */
+@media (min-width: 1024px) {
+  .services-hero {
+    padding: 6rem 2rem 5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin: 5rem auto;
+  }
+
+  .pricing-cards {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .pricing-card {
+    width: 290px;
+  }
+
+  .pricing-card--featured {
+    width: 290px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+
+  .services-cta {
+    margin: 5rem auto;
   }
 }
 
