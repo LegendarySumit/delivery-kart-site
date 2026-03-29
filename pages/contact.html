@@ -116,12 +116,13 @@
         <!-- FORM SECTION -->
         <div class="contact-form-container">
             <h2>Send Us a Message</h2>
-            <form id="contact-form" action="#" method="post">
+            <form id="contact-form" action="contact.html" method="post">
                 <input type="text" name="name" placeholder="Full Name" required />
                 <input type="email" name="email" placeholder="Email Address" required />
                 <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
                 <button type="submit" class="btn-primary">Send Message</button>
             </form>
+            <p style="margin-top:10px;font-size:13px;color:#555;">Demo notice: this form is showcase-only and does not send data to a backend.</p>
         </div>
     </main>
 
@@ -204,6 +205,17 @@
 
     <!-- Global site script -->
     <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('contact-form');
+            if (!form) return;
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thanks for your message. This is a static demo, so no data was sent.');
+                form.reset();
+            });
+        });
+    </script>
     
     <!-- Modals will load here -->
     <div id="auth-container"></div>

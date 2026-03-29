@@ -7,7 +7,7 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-[Live Demo](https://legendarysumit.github.io/delivery-kart-site/) • [Report Bug](#) • [Request Feature](#)
+[Live Demo](https://legendarysumit.github.io/delivery-kart-site/) • [Report Bug](https://github.com/legendarysumit/delivery-kart-site/issues/new?template=bug_report.md) • [Request Feature](https://github.com/legendarysumit/delivery-kart-site/issues/new?template=feature_request.md)
 
 </div>
 
@@ -22,7 +22,7 @@ This project represents months of growth in web development fundamentals and dem
 ### 🎯 Key Highlights
 
 - **Complete Rebuild**: Entire codebase redesigned from scratch
-- **Client-Side Authentication**: Full sign-up/sign-in system using Local Storage
+- **Client-Side Authentication (Demo)**: Full sign-up/sign-in flow using Local Storage
 - **Multi-Page Architecture**: Seamless navigation across interconnected pages
 - **Modern UI/UX**: Clean, responsive interface with consistent design language
 - **Pure JavaScript**: No frameworks—just vanilla JS to strengthen core fundamentals
