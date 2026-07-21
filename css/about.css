@@ -1,9 +1,3 @@
-
-/* ==========================================================
-   Delivery Kart — About Us Page Styling (Final Version)
-========================================================== */
-
-/* ===== HERO SECTION ===== */
 .about-hero {
   background: linear-gradient(90deg, #f5f2ff, #ebe4ff);
   padding: 6rem 2rem 5rem;
@@ -468,7 +462,7 @@
 
   .leaders {
     flex-direction: column;
-    gap: 1?.5rem;
+    gap: 1.5rem;
   }
 
   .leader-card {
